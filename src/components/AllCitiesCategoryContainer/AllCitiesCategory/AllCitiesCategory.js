@@ -31,7 +31,7 @@ const AllCitiesCategory = props => (
         key={subCategory.name}
         id={getSubCategorySectionId(subCategory.name)}
       >
-        {subCategory.name} chart section placeholder
+        {subCategory.name} charts: {subCategory.indicatorIds.join(', ')}
       </div>
     ))}
   </PageWrapper>
