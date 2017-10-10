@@ -1,17 +1,21 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import getSubCategorySectionId from '../../helpers/getSubCategorySectionId';
+import getColorVariant from '../../helpers/getColorVariant';
 import CityColumnChart from '../CityColumnChart/CityColumnChart';
 import { INDICATORS } from '../../constants';
 import style from './SubCategoryDetails.scss';
 
 const SubCategoryDetails = (props) => {
   const sc = props.subCategory;
+  const backgroundColor = getColorVariant(props.colorName, sc.tint);
+
   return (
     <div
       key={sc.name}
       id={getSubCategorySectionId(sc.name)}
       className={style.container}
+      style={{ backgroundColor }}
     >
       <div className={style.heading}>
         <span className={style.iconWrapper} />
