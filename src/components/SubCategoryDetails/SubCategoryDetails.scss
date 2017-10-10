@@ -1,0 +1,23 @@
+@import '~style/variables';
+
+.container {
+  @include container;
+
+  display: flex;
+  flex-direction: column;
+
+  // Spacing split between padding and margin for nice appearance on click anchor link
+  padding-top: 16px;
+  margin-top: 16px;
+}
+
+.heading {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  margin-bottom: 16px;
+}
+
+.iconWrapper {
+  @include iconWrapper;
+}

@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import PageWrapper from '../../PageWrapper/PageWrapper';
 import PageBanner from '../../PageBanner/PageBanner';
 import SubCategorySummary from '../../SubCategorySummary/SubCategorySummary';
-import getSubCategorySectionId from '../../../helpers/getSubCategorySectionId';
+import SubCategoryDetails from '../../SubCategoryDetails/SubCategoryDetails';
 import { INDICATORS } from '../../../constants';
 
 const AllCitiesCategory = props => (
@@ -27,12 +27,12 @@ const AllCitiesCategory = props => (
     ))}
 
     {props.category.subCategories.map(subCategory => (
-      <div
+      <SubCategoryDetails
         key={subCategory.name}
-        id={getSubCategorySectionId(subCategory.name)}
-      >
-        {subCategory.name} charts: {subCategory.indicatorIds.join(', ')}
-      </div>
+        subCategory={subCategory}
+        colorName={props.category.colorName}
+        cities={props.cities}
+      />
     ))}
   </PageWrapper>
 );
