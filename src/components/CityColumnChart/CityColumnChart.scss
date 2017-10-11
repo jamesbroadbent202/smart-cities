@@ -1,0 +1,48 @@
+@import '~style/variables';
+
+.wrapper {
+  padding: 16px;
+}
+
+.titleWrapper {
+  display: flex;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.title {
+  @include type-intro-text;
+
+  margin-right: 7px;
+  line-height: 1;
+}
+
+.legendWrapper {
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: center;
+
+  @include for-tablet-landscape-up {
+    flex-direction: row;
+  }
+}
+
+.descriptionLabel {
+  display: none;
+
+  @include for-phone-only {
+    display: block;
+
+    @include type-detail-text;
+  }
+}
+
+.title,
+.legendWrapper,
+.descriptionLabel {
+  margin-left: 120px;
+
+  @include for-phone-only {
+    margin-left: 15px;
+  }
+}

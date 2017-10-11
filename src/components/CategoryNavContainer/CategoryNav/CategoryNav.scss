@@ -1,12 +1,116 @@
 @import '~style/variables';
 
-.link {
-  display: inline-block;
-  padding: 10px;
-  text-decoration: none;
+.categoryNav {
+  background: $color-white;
+  display: flex;
+  padding-left: 20px;
+  width: 100%;
+  height: $top-nav-height-mobile;
+  white-space: nowrap;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  -ms-overflow-style: -ms-autohiding-scrollbar;
+
+  @include for-desktop-up {
+    height: $top-nav-height-desktop;
+    padding-left: 30px;
+  }
 }
 
-.link__active {
-  background: $color-grey--700;
+.link {
+  height: 100%;
+  display: inline-block;
+  padding: 12px 5px;
+  text-decoration: none;
+
+  @include for-desktop-up {
+    padding: 24px 5px;
+  }
+
+  &:hover div {
+    color: $color-white;
+  }
+
+  div {
+    @include type-nav-horizontal;
+    @include shadow;
+
+    padding: 0 24px;
+    border-radius: 100px;
+    color: $color-grey--700;
+
+    @include for-desktop-up {
+      &:not(:hover) {
+        box-shadow: none;
+      }
+    }
+  }
+
+  &:hover,
+  &.link__active {
+    .overview {
+      border: 1px solid $color-grey--500;
+      color: $color-grey--700;
+    }
+  }
+
+  &:hover {
+    .jobs {
+      background: $color-jobs--500;
+    }
+
+    .infrastructure {
+      background: $color-infrastructure--500;
+    }
+
+    .housing {
+      background: $color-housing--500;
+    }
+
+    .liveability {
+      background: $color-liveability--500;
+    }
+
+    .innovation {
+      background: $color-innovation--500;
+    }
+
+    .planning {
+      background: $color-planning--500;
+    }
+  }
+
+  &.link__active {
+    .jobs {
+      background: $color-jobs--600;
+    }
+
+    .infrastructure {
+      background: $color-infrastructure--600;
+    }
+
+    .housing {
+      background: $color-housing--600;
+    }
+
+    .liveability {
+      background: $color-liveability--600;
+    }
+
+    .innovation {
+      background: $color-innovation--600;
+    }
+
+    .planning {
+      background: $color-planning--600;
+    }
+  }
+}
+
+.overview {
+  border: 1px solid $color-white;
+}
+
+.link__active div {
   color: $color-white;
 }

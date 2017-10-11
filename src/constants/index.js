@@ -1,4 +1,3 @@
-export const DATA_URL = '/data/smartCitiesData.json';
-
-export const NO_CATEGORY = 'overview';
-export const NO_CITY = 'all-cities';
+export * from './misc';
+export { default as INDICATORS } from './indicators';
+export { default as CATEGORIES } from './categories';

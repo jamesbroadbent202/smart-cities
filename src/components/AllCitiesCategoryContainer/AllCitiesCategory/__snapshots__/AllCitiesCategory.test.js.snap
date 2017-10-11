@@ -2,16 +2,16 @@
 
 exports[`should match Snapshot 1`] = `
 "<PageWrapper categoryId=\\"mock\\" cityId=\\"all-cities\\">
-  <div className=\\"main\\">
-    <h1>
-      I am the &quot;Mock category&quot; page for all cities
-    </h1>
-    <pre>
-      {
-        &quot;name&quot;: &quot;Mock category&quot;,
-        &quot;id&quot;: &quot;mock&quot;
-      }
-    </pre>
+  <CategoryBanner category={{...}} cities={{...}} />
+  <SubCategorySummary name=\\"Buying houses\\" colorVariation=\\"100\\" indicatorIds={{...}} colorName=\\"jobs\\" cities={{...}} />
+  <SubCategorySummary name=\\"Living in houses\\" colorVariation=\\"050\\" indicatorIds={{...}} colorName=\\"jobs\\" cities={{...}} />
+  <div id=\\"sc-buying-houses\\">
+    Buying houses
+     chart section placeholder
+  </div>
+  <div id=\\"sc-living-in-houses\\">
+    Living in houses
+     chart section placeholder
   </div>
 </PageWrapper>"
 `;

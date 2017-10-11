@@ -1,29 +1,50 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import PageWrapper from '../../PageWrapper/PageWrapper';
-import style from './AllCitiesCategory.scss';
+import CategoryBanner from '../../CategoryBanner/CategoryBanner';
+import SubCategorySummary from '../../SubCategorySummary/SubCategorySummary';
+import getSubCategorySectionId from '../../../helpers/getSubCategorySectionId';
+import { INDICATORS } from '../../../constants';
 
-const AllCitiesCategory = (props) => {
-  const title = `I am the "${props.category.name}" page for all cities`;
+const AllCitiesCategory = props => (
+  <PageWrapper categoryId={props.category.id}>
+    <CategoryBanner {...props} />
 
-  return (
-    <PageWrapper categoryId={props.category.id}>
-      <div className={style.main}>
-        <h1>{title}</h1>
+    {props.category.subCategories.map(subCategory => (
+      <SubCategorySummary
+        key={subCategory.name}
+        {...subCategory}
+        colorName={props.category.colorName}
+        cities={props.cities}
+      />
+    ))}
 
-        <pre>{JSON.stringify(props.category, null, 2)}</pre>
+    {props.category.subCategories.map(subCategory => (
+      <div
+        key={subCategory.name}
+        id={getSubCategorySectionId(subCategory.name)}
+      >
+        {subCategory.name} chart section placeholder
       </div>
-    </PageWrapper>
-  );
-};
+    ))}
+  </PageWrapper>
+);
 
 AllCitiesCategory.propTypes = {
   category: PropTypes.shape({
-    name: PropTypes.string.isRequired,
+    colorName: PropTypes.string.isRequired,
+    description: PropTypes.string.isRequired,
+    heroIndicatorId: PropTypes.oneOf(Object.keys(INDICATORS)).isRequired,
     id: PropTypes.string.isRequired,
+    name: PropTypes.string.isRequired,
+    subCategories: PropTypes.arrayOf(PropTypes.shape({
+      name: PropTypes.string.isRequired,
+      indicatorIds: PropTypes.arrayOf(PropTypes.string).isRequired,
+    })).isRequired,
   }).isRequired,
   cities: PropTypes.arrayOf(PropTypes.shape({
     name: PropTypes.string.isRequired,
+    indices: PropTypes.object.isRequired,
   })).isRequired,
 };
 
