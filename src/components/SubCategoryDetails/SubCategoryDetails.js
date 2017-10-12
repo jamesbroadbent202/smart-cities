@@ -21,15 +21,19 @@ const SubCategoryDetails = (props) => {
         <span className={style.iconWrapper} />
         <h3 className={style.title}>{sc.name}</h3>
       </div>
-      {sc.indicatorIds.map(indicatorId => (
-        <CityColumnChart
-          key={indicatorId}
-          cities={props.cities}
-          colorBase={props.colorName}
-          colorVariation={sc.shade}
-          indicatorIds={[indicatorId]}
-        />
-      ))}
+      <div className={style.chartGrid}>
+        {sc.indicatorIds.map(indicatorId => (
+          <div className={style.chartWrapper}>
+            <CityColumnChart
+              key={indicatorId}
+              cities={props.cities}
+              colorBase={props.colorName}
+              colorVariation={sc.shade}
+              indicatorIds={[indicatorId]}
+            />
+          </div>
+        ))}
+      </div>
     </div>
   );
 };

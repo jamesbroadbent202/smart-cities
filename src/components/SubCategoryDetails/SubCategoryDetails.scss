@@ -1,8 +1,6 @@
 @import '~style/variables';
 
 .container {
-  @include container;
-
   display: flex;
   flex-direction: column;
   padding-top: 32px;
@@ -15,6 +13,24 @@
   align-items: center;
   width: 100%;
   margin-bottom: 16px;
+}
+
+.chartGrid {
+  width: 100%;
+  display: flex;
+  flex-flow: row wrap;
+}
+
+.chartWrapper {
+  flex-basis: 50%;
+
+  @include for-phone-only {
+    flex-basis: 100%;
+  }
+
+  @include for-desktop-up {
+    flex-basis: 33%;
+  }
 }
 
 .iconWrapper {
