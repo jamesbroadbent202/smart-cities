@@ -150,7 +150,6 @@ const CityColumnChart = (props) => {
               rotation: -90,
               padding: 0,
               style: {
-                color: 'green',
                 fontSize: '9px',
               },
             },
