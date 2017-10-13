@@ -22,14 +22,10 @@
 }
 
 .chartWrapper {
-  flex-basis: 50%;
+  flex-basis: 49%;
 
   @include for-phone-only {
     flex-basis: 100%;
-  }
-
-  @include for-desktop-up {
-    flex-basis: 33%;
   }
 }
 

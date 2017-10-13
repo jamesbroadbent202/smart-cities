@@ -87,7 +87,7 @@ const CityColumnChart = (props) => {
     chart: {
       type: 'column',
       height: 500,
-      marginLeft: 120,
+      marginLeft: 60,
       marginRight: 0,
     },
     plotOptions: {
@@ -105,6 +105,9 @@ const CityColumnChart = (props) => {
       categories: data.map(city => city.name),
       labels: {
         rotation: -45,
+        style: {
+          fontSize: '10px',
+        },
       },
     },
     yAxis: {
@@ -135,7 +138,7 @@ const CityColumnChart = (props) => {
     responsive: {
       rules: [{
         condition: {
-          maxWidth: 650,
+          maxWidth: 450,
         },
         chartOptions: {
           chart: {
@@ -146,7 +149,10 @@ const CityColumnChart = (props) => {
             labels: {
               rotation: -90,
               padding: 0,
-              style: { fontSize: '9px' },
+              style: {
+                color: 'green',
+                fontSize: '9px',
+              },
             },
           },
         },
