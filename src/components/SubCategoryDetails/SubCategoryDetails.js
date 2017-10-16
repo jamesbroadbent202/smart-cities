@@ -8,6 +8,14 @@ import style from './SubCategoryDetails.scss';
 const SubCategoryDetails = (props) => {
   const sc = props.subCategory;
 
+  const chartHasHero = chart => chart.indicatorIds.includes(props.heroIndicatorId);
+
+  const sortedCharts = sc.charts.sort((a, b) => {
+    if (chartHasHero(a)) return -1;
+    if (chartHasHero(b)) return 1;
+    return 0;
+  });
+
   return (
     <div
       key={sc.name}
@@ -19,18 +27,17 @@ const SubCategoryDetails = (props) => {
         <h3 className={style.title}>{sc.name}</h3>
       </div>
       <div className={style.chartGrid}>
-        {sc.indicatorIds.sort((a, b) => {
-          if (a === sc.heroIndicatorId) return -1;
-          if (b === sc.heroIndicatorId) return 1;
-          return 0;
-        }).map(indicatorId => (
-          <div className={style.chartWrapper}>
+        {sortedCharts.map(chart => (
+          <div
+            className={style.chartWrapper}
+            key={chart.name}
+          >
             <CityColumnChart
-              key={indicatorId}
+              title={chart.name}
               cities={props.cities}
               colorBase={props.colorName}
               colorVariation={sc.shade}
-              indicatorIds={[indicatorId]}
+              indicatorIds={chart.indicatorIds}
             />
           </div>
         ))}
@@ -41,17 +48,21 @@ const SubCategoryDetails = (props) => {
 
 SubCategoryDetails.propTypes = {
   subCategory: PropTypes.shape({
-    tint: PropTypes.string.isRequired,
-    indicatorIds: PropTypes.arrayOf(
-      PropTypes.oneOf(Object.keys(INDICATORS)),
-    ).isRequired,
     name: PropTypes.string.isRequired,
+    tint: PropTypes.string.isRequired,
+    charts: PropTypes.arrayOf(PropTypes.shape({
+      name: PropTypes.string.isRequired,
+      indicatorIds: PropTypes.arrayOf(
+        PropTypes.oneOf(Object.keys(INDICATORS)),
+      ).isRequired,
+    })),
   }),
   colorName: PropTypes.string.isRequired,
   cities: PropTypes.arrayOf(PropTypes.shape({
     name: PropTypes.string.isRequired,
     indices: PropTypes.object.isRequired,
   })).isRequired,
+  heroIndicatorId: PropTypes.string.isRequired,
 };
 
 export default SubCategoryDetails;

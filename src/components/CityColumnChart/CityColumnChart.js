@@ -70,7 +70,7 @@ const CityColumnChart = (props) => {
   // so this works for a normal or a stacked chart
   const series = props.indicatorIds.map((indicatorId, i) => ({
     index: props.indicatorIds.length - i, // reverse sort the series (to counteract Highcharts)
-    name: INDICATORS[indicatorId].name,
+    name: INDICATORS[indicatorId].shortDescription,
     color: chartColors[i],
     data: getSeriesDataForIndicator(data, indicatorId),
   }));
@@ -146,6 +146,12 @@ const CityColumnChart = (props) => {
           chart: {
             height: 400,
             marginLeft: 15,
+          },
+          plotOptions: {
+            series: {
+              pointWidth: 3,
+              borderRadius: 2,
+            },
           },
           xAxis: {
             labels: {

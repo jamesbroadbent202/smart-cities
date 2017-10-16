@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import flatten from 'lodash/flatten';
 import PageWrapper from '../../PageWrapper/PageWrapper';
 import PageBanner from '../../PageBanner/PageBanner';
 import SubCategorySummary from '../../SubCategorySummary/SubCategorySummary';
@@ -10,7 +11,7 @@ import style from './AllCitiesCategory.scss';
 
 const AllCitiesCategory = (props) => {
   const isHeroInSubCategory = props.category.subCategories.find(sc => (
-    sc.indicatorIds.includes(props.category.heroIndicatorId)
+    flatten(sc.charts.map(chart => chart.indicatorIds)).includes(props.category.heroIndicatorId)
   )) !== undefined;
 
   return (
@@ -26,7 +27,7 @@ const AllCitiesCategory = (props) => {
 
       {props.category.subCategories.map(subCategory => (
         <SubCategorySummary
-          key={subCategory.name}
+          key={subCategory.name.replace(' ', '-')}
           {...subCategory}
           colorName={props.category.colorName}
           cities={props.cities}
@@ -48,6 +49,7 @@ const AllCitiesCategory = (props) => {
           subCategory={subCategory}
           colorName={props.category.colorName}
           cities={props.cities}
+          heroIndicatorId={props.category.heroIndicatorId}
         />
       ))}
     </PageWrapper>
@@ -63,7 +65,12 @@ AllCitiesCategory.propTypes = {
     name: PropTypes.string.isRequired,
     subCategories: PropTypes.arrayOf(PropTypes.shape({
       name: PropTypes.string.isRequired,
-      indicatorIds: PropTypes.arrayOf(PropTypes.string).isRequired,
+      charts: PropTypes.arrayOf(PropTypes.shape({
+        name: PropTypes.string.isRequired,
+        indicatorIds: PropTypes.arrayOf(
+          PropTypes.oneOf(Object.keys(INDICATORS)),
+        ).isRequired,
+      })),
     })).isRequired,
   }).isRequired,
   cities: PropTypes.arrayOf(PropTypes.shape({
