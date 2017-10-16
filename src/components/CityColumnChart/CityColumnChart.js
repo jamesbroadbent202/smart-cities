@@ -98,6 +98,8 @@ const CityColumnChart = (props) => {
       },
       series: {
         stacking: 'normal',
+        pointWidth: 8,
+        borderRadius: 4,
       },
     },
     xAxis: {
@@ -124,7 +126,7 @@ const CityColumnChart = (props) => {
         },
       },
       title: yAxisTitle,
-      gridZIndex: 1, // grid lines are in front of the bars
+      gridZIndex: 4, // magic highcharts value to position grid lines in front of the bars: http://api.highcharts.com/highcharts/yAxis.gridZIndex
     },
     title: {
       enabled: false,
