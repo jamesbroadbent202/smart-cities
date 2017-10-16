@@ -7,6 +7,12 @@
   width: 100%;
   margin: 0 0 16px;
   background: $color-white;
+  padding-left: 16px;
+  overflow: hidden;
+
+  @include for-tablet-landscape-up {
+    padding-left: 32px;
+  }
 }
 
 .heading {
@@ -28,6 +34,10 @@
   @include for-phone-only {
     flex-basis: 100%;
   }
+}
+
+.heroChartWrapper {
+  flex-basis: 100%;
 }
 
 .iconWrapper {

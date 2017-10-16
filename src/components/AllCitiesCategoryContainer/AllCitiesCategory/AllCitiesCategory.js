@@ -38,7 +38,7 @@ const AllCitiesCategory = (props) => {
         <CityColumnChart
           cities={props.cities}
           colorBase={props.category.colorName}
-          colorVariation={500}
+          colorVariation="500"
           indicatorIds={[props.category.heroIndicatorId]}
         />
       </div>}

@@ -18,11 +18,21 @@ export default [
         ],
         charts: [
           {
+            name: 'Youth unemployment',
+            indicatorIds: [
+              'unemploymentRateYouth',
+            ],
+          },
+          {
             name: 'Unemployment rate',
             indicatorIds: [
               'unemploymentRateGeneral',
+            ],
+          },
+          {
+            name: 'Indigenous unemployment',
+            indicatorIds: [
               'unemploymentRateIndigenous',
-              'unemploymentRateYouth',
             ],
           },
           {

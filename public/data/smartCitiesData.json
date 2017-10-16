@@ -1,7 +1,9 @@
 [
   {
-    "name": "Greater Sydney",
     "id": "greater-sydney",
+    "shortName": "Sydney",
+    "description": "TODO enter in a description for Greater Sydney",
+    "name": "Greater Sydney",
     "indices": {
       "participationRateGeneral": 0.653,
       "participationRateMale": 0.626,
@@ -24,8 +26,10 @@
     }
   },
   {
-    "name": "Greater Melbourne",
     "id": "greater-melbourne",
+    "shortName": "Melbourne",
+    "description": "TODO enter in a description for Greater Melbourne",
+    "name": "Greater Melbourne",
     "indices": {
       "participationRateGeneral": 0.663,
       "participationRateMale": 0.749,
@@ -48,8 +52,10 @@
     }
   },
   {
-    "name": "Greater Brisbane",
     "id": "greater-brisbane",
+    "shortName": "Brisbane",
+    "description": "TODO enter in a description for Greater Brisbane",
+    "name": "Greater Brisbane",
     "indices": {
       "participationRateGeneral": 0.657,
       "participationRateMale": 0.677,
@@ -72,8 +78,10 @@
     }
   },
   {
-    "name": "Greater Perth",
     "id": "greater-perth",
+    "shortName": "Perth",
+    "description": "Perth is Western Australia’s state capital city. Perth has an estimated population of over 2.04 million people, which account for 8.58% of the national population. Perth is Australia 4th largest city in population size. Perth is part of the South West Land Division of Western Australia, with the majority of the metropolitan area of Perth located on the Swan Coastal Plain.",
+    "name": "Greater Perth",
     "indices": {
       "participationRateGeneral": 0.67,
       "participationRateMale": 0.593,
@@ -96,8 +104,10 @@
     }
   },
   {
-    "name": "Greater Adelaide",
     "id": "greater-adelaide",
+    "shortName": "Adelaide",
+    "description": "TODO enter in a description for Greater Adelaide",
+    "name": "Greater Adelaide",
     "indices": {
       "participationRateGeneral": 0.627,
       "participationRateMale": 0.67,
@@ -120,8 +130,10 @@
     }
   },
   {
-    "name": "Western Sydney",
     "id": "western-sydney",
+    "shortName": "Western Sydney",
+    "description": "TODO enter in a description for Western Sydney",
+    "name": "Western Sydney",
     "indices": {
       "participationRateGeneral": 0.626,
       "participationRateMale": 0.677,
@@ -144,8 +156,10 @@
     }
   },
   {
-    "name": "Gold Coast - Tweed Heads",
     "id": "gold-coast-tweed-heads",
+    "shortName": "Gold Coast/Tweed Heads",
+    "description": "TODO enter in a description for Gold Coast - Tweed Heads",
+    "name": "Gold Coast - Tweed Heads",
     "indices": {
       "participationRateGeneral": 0.605,
       "participationRateMale": 0.655,
@@ -168,8 +182,10 @@
     }
   },
   {
-    "name": "Newcastle - Maitland",
     "id": "newcastle-maitland",
+    "shortName": "Newcastle/Maitland",
+    "description": "TODO enter in a description for Newcastle - Maitland",
+    "name": "Newcastle - Maitland",
     "indices": {
       "participationRateGeneral": 0.619,
       "participationRateMale": 0.677,
@@ -192,8 +208,10 @@
     }
   },
   {
+    "id": "act",
+    "shortName": "ACT",
+    "description": "TODO enter in a description for Australian Capital Territory",
     "name": "Australian Capital Territory",
-    "id": "australian-capital-territory",
     "indices": {
       "participationRateGeneral": 0.699,
       "participationRateMale": 0.707,
@@ -216,8 +234,10 @@
     }
   },
   {
-    "name": "Sunshine Coast",
     "id": "sunshine-coast",
+    "shortName": "Sunshine Coast",
+    "description": "TODO enter in a description for Sunshine Coast",
+    "name": "Sunshine Coast",
     "indices": {
       "participationRateGeneral": 0.581,
       "participationRateMale": 0.812,
@@ -240,8 +260,10 @@
     }
   },
   {
-    "name": "Wollongong",
     "id": "wollongong",
+    "shortName": "Wollongong",
+    "description": "TODO enter in a description for Wollongong",
+    "name": "Wollongong",
     "indices": {
       "participationRateGeneral": 0.619,
       "participationRateMale": 0.655,
@@ -264,8 +286,10 @@
     }
   },
   {
-    "name": "Greater Hobart",
     "id": "greater-hobart",
+    "shortName": "Hobart",
+    "description": "TODO enter in a description for Greater Hobart",
+    "name": "Greater Hobart",
     "indices": {
       "participationRateGeneral": 0.605,
       "participationRateMale": 0.713,
@@ -288,8 +312,10 @@
     }
   },
   {
-    "name": "Geelong",
     "id": "geelong",
+    "shortName": "Geelong",
+    "description": "TODO enter in a description for Geelong",
+    "name": "Geelong",
     "indices": {
       "participationRateGeneral": 0.627,
       "participationRateMale": 0.72,
@@ -312,8 +338,10 @@
     }
   },
   {
-    "name": "Townsville",
     "id": "townsville",
+    "shortName": "Townsville",
+    "description": "TODO enter in a description for Townsville",
+    "name": "Townsville",
     "indices": {
       "participationRateGeneral": 0.607,
       "participationRateMale": 0.703,
@@ -336,8 +364,10 @@
     }
   },
   {
-    "name": "Greater Darwin",
     "id": "greater-darwin",
+    "shortName": "Darwin",
+    "description": "TODO enter in a description for Greater Darwin",
+    "name": "Greater Darwin",
     "indices": {
       "participationRateGeneral": 0.762,
       "participationRateMale": 0.638,
@@ -360,8 +390,10 @@
     }
   },
   {
-    "name": "Cairns",
     "id": "cairns",
+    "shortName": "Cairns",
+    "description": "TODO enter in a description for Cairns",
+    "name": "Cairns",
     "indices": {
       "participationRateGeneral": 0.62,
       "participationRateMale": 0.754,
@@ -384,8 +416,10 @@
     }
   },
   {
-    "name": "Toowoomba",
     "id": "toowoomba",
+    "shortName": "Toowoomba",
+    "description": "TODO enter in a description for Toowoomba",
+    "name": "Toowoomba",
     "indices": {
       "participationRateGeneral": 0.688,
       "participationRateMale": 0.669,
@@ -408,8 +442,10 @@
     }
   },
   {
-    "name": "Ballarat",
     "id": "ballarat",
+    "shortName": "Ballarat",
+    "description": "TODO enter in a description for Ballarat",
+    "name": "Ballarat",
     "indices": {
       "participationRateGeneral": 0.627,
       "participationRateMale": 0.631,
@@ -432,8 +468,10 @@
     }
   },
   {
-    "name": "Bendigo",
     "id": "bendigo",
+    "shortName": "Bendigo",
+    "description": "TODO enter in a description for Bendigo",
+    "name": "Bendigo",
     "indices": {
       "participationRateGeneral": 0.543,
       "participationRateMale": 0.738,
@@ -456,8 +494,10 @@
     }
   },
   {
-    "name": "Mackay",
     "id": "mackay",
+    "shortName": "Mackay",
+    "description": "TODO enter in a description for Mackay",
+    "name": "Mackay",
     "indices": {
       "participationRateGeneral": 0.704,
       "participationRateMale": 0.657,
@@ -480,8 +520,10 @@
     }
   },
   {
-    "name": "Albury - Wodonga",
     "id": "albury-wodonga",
+    "shortName": "Albury/Wodonga",
+    "description": "TODO enter in a description for Albury - Wodonga",
+    "name": "Albury - Wodonga",
     "indices": {
       "participationRateGeneral": 0.576,
       "participationRateMale": 0.676,
@@ -504,8 +546,10 @@
     }
   },
   {
-    "name": "Launceston",
     "id": "launceston",
+    "shortName": "Launceston",
+    "description": "TODO enter in a description for Launceston",
+    "name": "Launceston",
     "indices": {
       "participationRateGeneral": 0.588,
       "participationRateMale": 0.669,

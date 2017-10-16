@@ -8,13 +8,11 @@ import style from './SubCategoryDetails.scss';
 const SubCategoryDetails = (props) => {
   const sc = props.subCategory;
 
-  const chartHasHero = chart => chart.indicatorIds.includes(props.heroIndicatorId);
+  const heroChart = sc.charts.find(chart => (
+    chart.indicatorIds.includes(props.heroIndicatorId)));
 
-  const sortedCharts = sc.charts.sort((a, b) => {
-    if (chartHasHero(a)) return -1;
-    if (chartHasHero(b)) return 1;
-    return 0;
-  });
+  const otherCharts = sc.charts.filter(chart => (
+    !chart.indicatorIds.includes(props.heroIndicatorId)));
 
   return (
     <div
@@ -27,7 +25,17 @@ const SubCategoryDetails = (props) => {
         <h3 className={style.title}>{sc.name}</h3>
       </div>
       <div className={style.chartGrid}>
-        {sortedCharts.map(chart => (
+        {heroChart && <div className={style.heroChartWrapper} key="hero">
+          <CityColumnChart
+            title={heroChart.name}
+            cities={props.cities}
+            colorBase={props.colorName}
+            colorVariation={sc.shade}
+            indicatorIds={heroChart.indicatorIds}
+          />
+        </div>}
+
+        {otherCharts.map(chart => (
           <div
             className={style.chartWrapper}
             key={chart.name}
