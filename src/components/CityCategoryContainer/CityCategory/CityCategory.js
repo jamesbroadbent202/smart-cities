@@ -3,45 +3,46 @@ import PropTypes from 'prop-types';
 import PageWrapper from '../../PageWrapper/PageWrapper';
 import PageBanner from '../../PageBanner/PageBanner';
 import SubCategorySummary from '../../SubCategorySummary/SubCategorySummary';
-import style from './CityCategory.scss';
+import SubCategoryDetails from '../../SubCategoryDetails/SubCategoryDetails';
+import { INDICATORS } from '../../../constants';
 
-const CityCategory = (props) => {
-  const title = `I am the "${props.category.name}" page for "${props.city.name}"`;
+const CityCategory = props => (
+  <PageWrapper
+    cityId={props.city.id}
+    categoryId={props.category.id}
+    cityName={props.city.name}
+    categoryColorName={props.category.colorName}
+  >
+    <PageBanner
+      colorName={props.category.colorName}
+      description={props.category.description}
+      indicator={props.category.heroIndicatorId}
+      title={props.category.name}
+      cities={props.cities}
+      isCategoryPage
+    />
 
-  return (
-    <PageWrapper
-      cityId={props.city.id}
-      categoryId={props.category.id}
-      cityName={props.city.name}
-      categoryColorName={props.category.colorName}
-    >
-      <PageBanner
+    {props.category.subCategories.map(subCategory => (
+      <SubCategorySummary
+        key={subCategory.name}
+        {...subCategory}
         colorName={props.category.colorName}
-        description={props.category.description}
-        indicator={props.category.heroIndicatorId}
-        title={props.category.name}
-        cities={props.cities}
-        isCategoryPage
+        city={props.city}
       />
+    ))}
 
-      {props.category.subCategories.map(subCategory => (
-        <SubCategorySummary
-          key={subCategory.name}
-          {...subCategory}
-          colorName={props.category.colorName}
-          city={props.city}
-        />
-      ))}
-
-      <div className={style.main}>
-        <h1>{title}</h1>
-
-        <pre>{JSON.stringify(props.category, null, 2)}</pre>
-        <pre>{JSON.stringify(props.cities, null, 2)}</pre>
-      </div>
-    </PageWrapper>
-  );
-};
+    {props.category.subCategories.map(subCategory => (
+      <SubCategoryDetails
+        key={subCategory.name}
+        subCategory={subCategory}
+        colorName={props.category.colorName}
+        cities={props.cities}
+        city={props.city}
+        heroIndicatorId={props.category.heroIndicatorId}
+      />
+    ))}
+  </PageWrapper>
+);
 
 CityCategory.propTypes = {
   category: PropTypes.shape({
@@ -52,7 +53,12 @@ CityCategory.propTypes = {
     heroIndicatorId: PropTypes.string.isRequired,
     subCategories: PropTypes.arrayOf(PropTypes.shape({
       name: PropTypes.string.isRequired,
-      indicatorIds: PropTypes.arrayOf(PropTypes.string).isRequired,
+      charts: PropTypes.arrayOf(PropTypes.shape({
+        name: PropTypes.string.isRequired,
+        indicatorIds: PropTypes.arrayOf(
+          PropTypes.oneOf(Object.keys(INDICATORS)),
+        ).isRequired,
+      })),
     })).isRequired,
   }).isRequired,
   city: PropTypes.shape({
