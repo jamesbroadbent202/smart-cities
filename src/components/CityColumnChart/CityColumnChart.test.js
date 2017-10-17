@@ -18,14 +18,14 @@ const defaultProps = {
       name: 'Perth',
       indices: {
         population: 12,
-        populationGrowth: 0.99,
+        growthRate: 0.99,
       }
     },
     {
       name: 'Sydney',
       indices: {
         population: 12,
-        populationGrowth: 0.19,
+        growthRate: 0.19,
       }
     },
   ],
@@ -46,7 +46,7 @@ it('should render a legend when there is more than one indicator', () => {
   const component = shallow(
     <CityColumnChart
       {...defaultProps}
-      indicatorIds={['population', 'populationGrowth']}
+      indicatorIds={['population', 'growthRate']}
     />
   );
 

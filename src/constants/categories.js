@@ -12,7 +12,7 @@ export default [
         tint: '040',
         shade: '600',
         indicatorIds: [
-          'participationRate',
+          'participationRateGeneral',
         ],
       },
       {
@@ -37,7 +37,7 @@ export default [
         tint: '040',
         shade: '600',
         indicatorIds: [
-          'jobAccessibility',
+          'jobsCar',
         ],
       },
       {
@@ -45,11 +45,11 @@ export default [
         tint: '060',
         shade: '700',
         indicatorIds: [
-          'jobAccessibility',
+          'jobsCar',
         ],
       },
     ],
-    heroIndicatorId: 'populationGrowth',
+    heroIndicatorId: 'growthRate',
   },
   {
     id: 'infrastructure',
@@ -63,7 +63,7 @@ export default [
         tint: '040',
         shade: '600',
         indicatorIds: [
-          'jobAccessibility',
+          'jobsCar',
         ],
       },
       {
@@ -155,7 +155,7 @@ export default [
         tint: '060',
         shade: '700',
         indicatorIds: [
-          'jobAccessibility',
+          'jobsCar',
         ],
       },
     ],
