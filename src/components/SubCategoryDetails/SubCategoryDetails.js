@@ -69,6 +69,11 @@ const SubCategoryDetails = (props) => {
   );
 };
 
+const cityType = PropTypes.shape({
+  name: PropTypes.string.isRequired,
+  indices: PropTypes.object.isRequired,
+});
+
 SubCategoryDetails.propTypes = {
   subCategory: PropTypes.shape({
     name: PropTypes.string.isRequired,
@@ -80,10 +85,8 @@ SubCategoryDetails.propTypes = {
     })),
   }),
   colorName: PropTypes.string.isRequired,
-  cities: PropTypes.arrayOf(PropTypes.shape({
-    name: PropTypes.string.isRequired,
-    indices: PropTypes.object.isRequired,
-  })).isRequired,
+  cities: PropTypes.arrayOf(cityType).isRequired,
+  city: cityType,
   heroIndicatorId: PropTypes.string.isRequired,
 };
 

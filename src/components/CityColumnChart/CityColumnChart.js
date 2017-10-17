@@ -203,12 +203,15 @@ const CityColumnChart = (props) => {
   );
 };
 
+const cityType = PropTypes.shape({
+  name: PropTypes.string.isRequired,
+  indices: PropTypes.object.isRequired,
+});
+
 CityColumnChart.propTypes = {
   ceiling: PropTypes.number,
-  cities: PropTypes.arrayOf(PropTypes.shape({
-    indices: PropTypes.object.isRequired,
-    name: PropTypes.string.isRequired,
-  })).isRequired,
+  cities: PropTypes.arrayOf(cityType).isRequired,
+  city: cityType,
   className: PropTypes.string,
   colorBase: PropTypes.oneOf(Object.values(COLOR_NAMES)).isRequired,
   highlightColorDark: PropTypes.string.isRequired,
