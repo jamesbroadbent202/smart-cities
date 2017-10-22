@@ -20,7 +20,7 @@
   },
   "dependencies": {
     "@atlaskit/tooltip": "^6.0.0",
-    "@gov.au/datavizkit": "^1.0.32-development",
+    "@gov.au/datavizkit": "^1.0.34",
     "@std/esm": "^0.11.0",
     "classnames": "^2.2.5",
     "color": "^2.0.0",
@@ -31,7 +31,6 @@
     "identity-obj-proxy": "3.0.0",
     "lodash": "4.17.4",
     "numeral": "^2.0.6",
-    "promise": "^8.0.1",
     "prop-types": "^15.5.10",
     "react": "^16.0.0",
     "react-dom": "^16.0.0",

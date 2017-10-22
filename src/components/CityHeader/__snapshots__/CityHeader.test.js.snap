@@ -1,0 +1,19 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should match Snapshot 1`] = `
+"<div className=\\"wrapper\\">
+  <div className=\\"backgroundPanelWrapper\\">
+    <div className=\\"backgroundPanel\\" style={{...}} />
+    <div className=\\"backgroundPanel\\" style={{...}} />
+    <div className=\\"backgroundPanel\\" style={{...}} />
+    <div className=\\"backgroundPanel\\" style={{...}} />
+    <div className=\\"backgroundPanel\\" style={{...}} />
+  </div>
+  <div className=\\"container\\">
+    <h1 className=\\"title\\">
+      Greater perth
+    </h1>
+    <../Icon/Icon className=\\"iconWrapper\\" color=\\"JOBS_500\\" icon=\\"infrastructureGettingToWork\\" size={180} />
+  </div>
+</div>"
+`;

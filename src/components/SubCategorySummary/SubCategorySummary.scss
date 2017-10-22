@@ -1,5 +1,9 @@
 @import '~style/variables';
 
+.wrapper {
+  border-top: 4px solid $color-white;
+}
+
 .container {
   @include container;
 
@@ -28,10 +32,6 @@
 }
 
 .iconWrapper {
-  // TODO (davidg): implement real icons
-  border: 1px dashed $color-grey--500;
-  width: 80px;
-  height: 80px;
   flex: none;
   margin-right: 8px;
 }
@@ -91,12 +91,4 @@
 
 .linkText {
   margin-right: 8px;
-}
-
-.linkIcon {
-  // TODO (davidg): implement real icons
-  display: inline;
-  padding: 0 9px;
-  border: 1px dashed $color-grey--500;
-  height: 20px;
 }

@@ -42,7 +42,7 @@ function sortChartData(cities, indicator) {
 const CityColumnChart = (props) => {
   // If more than one indicator is passed in, this becomes a stacked column chart
   const isStacked = props.indicatorIds.length > 1;
-  const baseColor = getColorVariant(props.colorBase, props.colorVariation);
+  const baseColor = getColorVariant(props.highlightColorDark);
   const chartColors = getColorRange(baseColor, props.indicatorIds.length);
 
   // The indicator data contains things like titles and descriptions. But these can
@@ -70,7 +70,7 @@ const CityColumnChart = (props) => {
   // so this works for a normal or a stacked chart
   const series = props.indicatorIds.map((indicatorId, i) => ({
     index: props.indicatorIds.length - i, // reverse sort the series (to counteract Highcharts)
-    name: INDICATORS[indicatorId].name,
+    name: INDICATORS[indicatorId].shortDescription,
     color: chartColors[i],
     data: getSeriesDataForIndicator(data, indicatorId),
   }));
@@ -87,7 +87,7 @@ const CityColumnChart = (props) => {
     chart: {
       type: 'column',
       height: 500,
-      marginLeft: 120,
+      marginLeft: 60,
       marginRight: 0,
     },
     plotOptions: {
@@ -98,6 +98,8 @@ const CityColumnChart = (props) => {
       },
       series: {
         stacking: 'normal',
+        pointWidth: 8,
+        borderRadius: 4,
       },
     },
     xAxis: {
@@ -105,6 +107,9 @@ const CityColumnChart = (props) => {
       categories: data.map(city => city.name),
       labels: {
         rotation: -45,
+        style: {
+          fontSize: '10px',
+        },
       },
     },
     yAxis: {
@@ -121,7 +126,7 @@ const CityColumnChart = (props) => {
         },
       },
       title: yAxisTitle,
-      gridZIndex: 1, // grid lines are in front of the bars
+      gridZIndex: 4, // magic highcharts value to position grid lines in front of the bars: http://api.highcharts.com/highcharts/yAxis.gridZIndex
     },
     title: {
       enabled: false,
@@ -135,18 +140,26 @@ const CityColumnChart = (props) => {
     responsive: {
       rules: [{
         condition: {
-          maxWidth: 650,
+          maxWidth: 450,
         },
         chartOptions: {
           chart: {
             height: 400,
             marginLeft: 15,
           },
+          plotOptions: {
+            series: {
+              pointWidth: 3,
+              borderRadius: 2,
+            },
+          },
           xAxis: {
             labels: {
               rotation: -90,
               padding: 0,
-              style: { fontSize: '9px' },
+              style: {
+                fontSize: '9px',
+              },
             },
           },
         },
@@ -157,11 +170,11 @@ const CityColumnChart = (props) => {
   const config = merge({}, baseChartConfig, columnChartConfig);
 
   return (
-    <div className={classnames(style.wrapper, props.className)}>
+    <div className={classnames(style.wrapper, props.className, { [style.stacked]: isStacked })}>
       <div className={style.titleWrapper}>
-        <h2 className={style.title}>
+        <h4 className={style.title}>
           {title}
-        </h2>
+        </h4>
 
         <AboutTooltip
           description={longDescription}
@@ -174,7 +187,6 @@ const CityColumnChart = (props) => {
         <Legend
           // Legend is our own HTML so we can style and position it with CSS
           className={style.legendWrapper}
-          title={shortDescription}
           series={series}
         />
       )}
@@ -198,7 +210,7 @@ CityColumnChart.propTypes = {
   })).isRequired,
   className: PropTypes.string,
   colorBase: PropTypes.oneOf(Object.values(COLOR_NAMES)).isRequired,
-  colorVariation: PropTypes.string.isRequired,
+  highlightColorDark: PropTypes.string.isRequired,
   indicatorIds: PropTypes.arrayOf(
     PropTypes.oneOf(Object.keys(INDICATORS)),
   ).isRequired,

@@ -1,20 +1,32 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import IndicatorCard from '../Card/IndicatorCard/IndicatorCard';
+import Icon from '../Icon/Icon';
 import aggregateIndicatorForCities from '../../helpers/aggregateIndicatorForCities';
 import getSubCategorySectionId from '../../helpers/getSubCategorySectionId';
 import getColorVariant from '../../helpers/getColorVariant';
-import { INDICATORS } from '../../constants';
+import {
+  INDICATORS,
+  CATEGORY_IDS,
+} from '../../constants';
 import style from './SubCategorySummary.scss';
 
 const SubCategorySummary = (props) => {
-  const backgroundColor = getColorVariant(props.colorName, props.tint);
-  const cardHighlightColor = getColorVariant(props.colorName, props.shade);
+  const backgroundColor = getColorVariant(props.highlightColorLight);
+  const cardHighlightColor = getColorVariant(props.highlightColorDark);
 
-  const firstThreeIndicators = props.indicatorIds.slice(0, 3);
+  const indicatorCardWrappers = props.summaryIndicatorIds.map((indicatorId, i) => {
+    const lastOne = i === (props.summaryIndicatorIds.length - 1);
+    const indicatorValue = props.city
+      ? props.city.indices[indicatorId]
+      : aggregateIndicatorForCities(
+        indicatorId,
+        props.cities,
+      );
 
-  const indicatorCardWrappers = firstThreeIndicators.map((indicatorId, i) => {
-    const lastOne = i === (firstThreeIndicators.length - 1);
+    const linkText = props.categoryId === CATEGORY_IDS.CONTEXT
+      ? 'View contextual charts'
+      : `View all ${props.name} charts`;
 
     return (
       <div
@@ -25,18 +37,16 @@ const SubCategorySummary = (props) => {
           className={style.card}
           indicator={indicatorId}
           color={cardHighlightColor}
-          value={aggregateIndicatorForCities(
-            indicatorId,
-            props.cities,
-          )}
+          colorName={props.categoryId}
+          value={indicatorValue}
+          isCategoryPage
         />
         {lastOne && (
           <a
             className={style.linkWrapper}
             href={`#${getSubCategorySectionId(props.name)}`}
           >
-            <span className={style.linkText}>View all {props.name} charts</span>
-            <span className={style.linkIcon} />
+            <span className={style.linkText}>{linkText}</span>
           </a>
         )}
       </div>
@@ -44,10 +54,15 @@ const SubCategorySummary = (props) => {
   });
 
   return (
-    <div style={{ backgroundColor }}>
+    <div style={{ backgroundColor }} className={style.wrapper}>
       <div className={style.container}>
         <div className={style.textWrapper}>
-          <span className={style.iconWrapper} />
+          <Icon
+            className={style.iconWrapper}
+            icon={props.iconId}
+            color={cardHighlightColor}
+            size={80}
+          />
 
           <h3 className={style.title}>{props.name}</h3>
         </div>
@@ -60,15 +75,20 @@ const SubCategorySummary = (props) => {
   );
 };
 
+const cityPropShape = {
+  id: PropTypes.string.isRequired,
+  name: PropTypes.string.isRequired,
+  indices: PropTypes.object.isRequired,
+};
+
 SubCategorySummary.propTypes = {
-  cities: PropTypes.arrayOf(PropTypes.shape({
-    name: PropTypes.string.isRequired,
-    indices: PropTypes.object.isRequired,
-  })).isRequired,
-  colorName: PropTypes.string.isRequired,
-  tint: PropTypes.string.isRequired,
-  shade: PropTypes.string.isRequired,
-  indicatorIds: PropTypes.arrayOf(
+  city: PropTypes.shape(cityPropShape),
+  cities: PropTypes.arrayOf(PropTypes.shape(cityPropShape)),
+  categoryId: PropTypes.string.isRequired,
+  highlightColorLight: PropTypes.string.isRequired,
+  highlightColorDark: PropTypes.string.isRequired,
+  iconId: PropTypes.string.isRequired,
+  summaryIndicatorIds: PropTypes.arrayOf(
     PropTypes.oneOf(Object.keys(INDICATORS)),
   ).isRequired,
   name: PropTypes.string.isRequired,

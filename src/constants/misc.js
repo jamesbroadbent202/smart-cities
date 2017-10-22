@@ -15,6 +15,7 @@ export const INDICATOR_CARD_TYPES = {
 
 // note, the values are lowercase because they're used in CSS class names
 export const COLOR_NAMES = {
+  CONTEXT: 'context',
   JOBS: 'jobs',
   HOUSING: 'housing',
   INFRASTRUCTURE: 'infrastructure',
@@ -36,4 +37,9 @@ export const DATA_TYPES = {
 export const LINKS = {
   ORG: 'https://dta.gov.au/',
   CONTACT_US: 'mailto:performance-dashboard@digital.gov.au',
+};
+
+export const STRINGS = {
+  OVERVIEW_TITLE: 'Smart cities',
+  OVERVIEW_DESCRIPTION: 'The National Cities Performance Framework provides a snapshot of the productivity, liveability and progress of Australia\'s major cities and tracks changes in their performance over time. The Performance Framework is the first of its kind for Australia, bringing together critical cities information in an easily accessible online format, in the one location.',
 };

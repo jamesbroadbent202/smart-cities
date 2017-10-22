@@ -2,7 +2,7 @@ import React from 'react';
 import { shallow } from 'enzyme';
 import AllCitiesCategory from './AllCitiesCategory';
 
-jest.mock('../../CategoryBanner/CategoryBanner', () => 'CategoryBanner');
+jest.mock('../../PageBanner/PageBanner', () => 'PageBanner');
 jest.mock('../../SubCategorySummary/SubCategorySummary', () => 'SubCategorySummary');
 
 const defaultProps = {
@@ -15,14 +15,15 @@ const defaultProps = {
     subCategories: [
       {
         name: 'Buying houses',
-        colorVariation: '100',
-        indicatorIds: [],
+        tint: '100',
+        summaryIndicatorIds: [],
+        charts: [],
       },
       {
         name: 'Living in houses',
-        colorVariation: '050',
-        indicatorIds: [
-        ],
+        tint: '050',
+        summaryIndicatorIds: [],
+        charts: [],
       },
     ],
   },

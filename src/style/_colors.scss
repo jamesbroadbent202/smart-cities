@@ -1,3 +1,10 @@
+$color-overview--020: #edf8fb;
+$color-overview--500: #32869c;
+$color-overview--600: #2b7588;
+$color-overview--700: #256778;
+$color-overview--800: #205a69;
+$color-overview--900: #1a4854;
+
 $color-jobs--020: #f5f6f9;
 $color-jobs--040: #e8eaf6;
 $color-jobs--060: #e3e5ef;
@@ -39,7 +46,7 @@ $color-liveability--100: #bfd7d8;
 $color-liveability--500: #399588;
 $color-liveability--600: #34887b;
 $color-liveability--700: #2d796b;
-$color-liveability--800: #194d40;
+$color-liveability--800: #26695c;
 $color-liveability--900: #194d40;
 
 $color-innovation--020: #fdf1f6;
@@ -66,6 +73,8 @@ $color-planning--900: #4a158b;
 
 $color-white: #fff;
 $color-grid: rgba(202, 200, 202, 0.25); // highcharts can't set opacity on a line, so we need rgba()
+$color-grey--100: #f6f4f4;
+$color-grey--200: #d9d7d7;
 $color-grey--500: #9b9b9b;
 $color-grey--700: #4a4a4a;
 $color-black: #000;
@@ -88,6 +97,24 @@ $color-primary--900: #003a45;
 
 /* stylelint-disable property-no-unknown, property-case, declaration-empty-line-before */
 :export {
+  // note that these CONTEXT colours use the 'overview' variables
+  CONTEXT_020: $color-overview--020;
+  CONTEXT_500: $color-overview--500;
+  CONTEXT_600: $color-overview--600;
+  CONTEXT_700: $color-overview--700;
+  CONTEXT_800: $color-overview--800;
+  CONTEXT_900: $color-overview--900;
+
+  PRIMARY_020: $color-primary--020;
+  PRIMARY_040: $color-primary--040;
+  PRIMARY_060: $color-primary--060;
+  PRIMARY_080: $color-primary--080;
+  PRIMARY_500: $color-primary--500;
+  PRIMARY_600: $color-primary--600;
+  PRIMARY_700: $color-primary--700;
+  PRIMARY_800: $color-primary--800;
+  PRIMARY_900: $color-primary--900;
+
   JOBS_020: $color-jobs--020;
   JOBS_040: $color-jobs--040;
   JOBS_060: $color-jobs--060;
@@ -153,6 +180,10 @@ $color-primary--900: #003a45;
   PLANNING_700: $color-planning--700;
   PLANNING_800: $color-planning--800;
   PLANNING_900: $color-planning--900;
+
+  GREY_700: $color-grey--700;
+  WHITE: $color-white;
+  GRID: $color-grid;
 }
 
 /* stylelint-enable */

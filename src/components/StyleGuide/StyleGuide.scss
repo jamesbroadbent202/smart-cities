@@ -12,10 +12,34 @@
 
 .sectionText {
   @include type-h1;
+
+  margin-bottom: 16px;
 }
 
 .subSectionText {
   @include type-h3;
+}
+
+.iconsWrapper {
+  margin-bottom: 64px;
+}
+
+.iconWrapper {
+  @include shadow;
+
+  display: inline-block;
+  padding: 16px 0;
+  margin: 0 16px 16px 0;
+  width: 200px;
+  text-align: center;
+  border-radius: 4px;
+  color: $color-primary--500;
+}
+
+.code {
+  padding-top: 16px;
+  font-size: 12px;
+  color: $color-grey--700;
 }
 
 .color-jobs--020 { background: $color-jobs--020; }
@@ -96,6 +120,8 @@
 
 .color-white { background: $color-white; }
 .color-grid { background: $color-grid; }
+.color-grey--100 { background: $color-grey--100; }
+.color-grey--200 { background: $color-grey--200; }
 .color-grey--500 { background: $color-grey--500; }
 .color-grey--700 { background: $color-grey--700; }
 .color-black { background: $color-black; }
