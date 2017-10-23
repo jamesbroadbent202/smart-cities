@@ -38,6 +38,17 @@
   }
 }
 
+.arrowInCircleInverted {
+  circle {
+    fill: $color-white;
+  }
+
+  path {
+    fill: none;
+    stroke: currentColor;
+  }
+}
+
 // This will be applied to the SVG element itself
 :global(.circleWithShadow) {
   @include shadow(2);

@@ -15,8 +15,8 @@ export const CATEGORIES = [
     id: CATEGORY_IDS.CONTEXT,
     colorName: COLOR_NAMES.CONTEXT,
     navName: 'Context',
-    name: 'Understanding city context',
-    description: 'Contextual indicators can help to understand why a city performs the way it does and what policies may be effective for improving economic performance and quality of life. They are not measures of performance and typically not amenable to local policy intervention.',
+    name: 'Cities Context',
+    description: 'Contextual indicators can help to understand why a city performs the way it does and what policies may be effective for improving economic performance and quality of life.',
     subCategories: [
       {
         name: 'Planning',
@@ -169,7 +169,7 @@ export const CATEGORIES = [
     id: CATEGORY_IDS.INFRASTRUCTURE,
     colorName: COLOR_NAMES.INFRASTRUCTURE,
     iconId: 'infrastructureGettingToWork',
-    name: 'Infrastructure & Other Things',
+    name: 'Infrastructure',
     navName: 'Infrastructure',
     description: 'Infrastructure and Investment encompasses all key dimensions of the city’s investment environment, with a particular focus on the quality, efficiency and effectiveness of infrastructure.',
     subCategories: [

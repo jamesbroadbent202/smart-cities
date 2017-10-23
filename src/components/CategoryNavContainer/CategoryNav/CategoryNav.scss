@@ -4,6 +4,10 @@
   width: 100%;
   height: $top-nav-height-mobile;
   background: $color-white;
+  position: relative;
+  z-index: $z-index-cat-nav;
+
+  // TODO (davidg): no background, different styles on overview
 
   @include for-desktop-up {
     height: $top-nav-height-desktop;

@@ -1,7 +1,7 @@
 @import '~style/variables';
 
 .pageWrapper {
-  z-index: $z-index-page-wrapper;
+  //z-index: $z-index-page-wrapper;
 
   @include for-desktop-up {
     padding-left: $sidebar-width;

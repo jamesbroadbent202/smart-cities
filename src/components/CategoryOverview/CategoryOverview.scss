@@ -1,0 +1,86 @@
+@import '~style/variables';
+
+.categoryWrapper {
+  border-top: 4px solid $color-white;
+}
+
+.category {
+  @include container;
+
+  display: flex;
+  padding-top: 32px;
+  padding-bottom: 32px;
+}
+
+.categoryIcon {
+  flex: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100px;
+  margin-right: 32px;
+}
+
+.categoryTextWrapper {
+  margin-right: 32px;
+}
+
+.categoryTitle {
+  font-size: 35px;
+  margin-bottom: 16px;
+
+  .category__context & {
+    font-size: 22px;
+    font-weight: 700;
+  }
+}
+
+.categoryDescription {
+  margin-bottom: 16px;
+  font-size: 22px;
+}
+
+.subCategoryWrapperText {
+  font-size: 12px;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+
+.subCategoryLink {
+  margin-right: 8px;
+  padding: 0 28px;
+  font-size: 14px;
+  background: $color-white;
+}
+
+.indicatorCardAndLink {
+  flex: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  width: 250px;
+  margin-left: auto;
+}
+
+.indicatorCard {
+  margin-bottom: 16px;
+}
+
+.categoryLinkWrapper {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  padding: 4px;
+  border-radius: 10px;
+}
+
+.categoryLinkText {
+  flex: auto;
+  text-align: center;
+  font-size: 14px;
+  //color: $color-white;
+}
+
+.categoryLinkIcon {
+  flex: none;
+}

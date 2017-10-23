@@ -40,6 +40,5 @@ export const LINKS = {
 };
 
 export const STRINGS = {
-  OVERVIEW_TITLE: 'Smart cities',
-  OVERVIEW_DESCRIPTION: 'The National Cities Performance Framework provides a snapshot of the productivity, liveability and progress of Australia\'s major cities and tracks changes in their performance over time. The Performance Framework is the first of its kind for Australia, bringing together critical cities information in an easily accessible online format, in the one location.',
+  SUB_CATS_INCLUDE: 'Sub categories include:',
 };

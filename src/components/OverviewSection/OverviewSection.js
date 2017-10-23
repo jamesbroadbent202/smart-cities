@@ -1,36 +1,38 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import PageBanner from '../PageBanner/PageBanner';
+// import PageBanner from '../PageBanner/PageBanner';
 import CategoryIndicator from '../CategoryIndicator/CategoryIndicator';
 import {
   CATEGORIES,
   CATEGORY_IDS,
-  STRINGS,
+  // STRINGS,
 } from '../../constants/index';
 import getColorVariant from '../../helpers/getColorVariant';
 import style from './OverviewSection.scss';
 
-const HERO_INDICATOR = 'population';
+// const HERO_INDICATOR = 'population';
 
+// TODO (davidg): delete this
 const OverviewSection = (props) => {
-  const description = props.city
-    ? props.city.description
-    : STRINGS.OVERVIEW_DESCRIPTION;
-
-  const title = props.city
-    ? props.city.shortName
-    : STRINGS.OVERVIEW_TITLE;
+  console.log('  --  >  OverviewSection.js:16 > OverviewSection');
+  // const description = props.city
+  //   ? props.city.description
+  //   : STRINGS.OVERVIEW_DESCRIPTION;
+  //
+  // const title = props.city
+  //   ? props.city.shortName
+  //   : STRINGS.OVERVIEW_TITLE;
 
   return (
     <div className={style.wrapper}>
-      <PageBanner
-        colorName="primary"
-        description={description}
-        indicator={HERO_INDICATOR}
-        title={title}
-        cities={props.cities}
-        city={props.city}
-      />
+      {/* <PageBanner */}
+      {/* colorName="primary" */}
+      {/* description={description} */}
+      {/* indicator={HERO_INDICATOR} */}
+      {/* title={title} */}
+      {/* cities={props.cities} */}
+      {/* city={props.city} */}
+      {/* /> */}
 
       <div className={style.indicatorCards}>
         {CATEGORIES

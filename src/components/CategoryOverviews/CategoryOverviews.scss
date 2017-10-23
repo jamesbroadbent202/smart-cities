@@ -1,0 +1,21 @@
+@import '~style/variables';
+
+.footerSpacerWrapper {
+  background: $color-white;
+  padding-top: 64px;
+  padding-bottom: 64px;
+}
+
+.footerSpacerContainer {
+  @include container;
+}
+
+.footerSpacerLine {
+  background: $color-grey--200;
+  height: 1px;
+}
+
+.footerSpacerShade {
+  height: 64px;
+  background: $color-overview--020;
+}

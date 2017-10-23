@@ -1,0 +1,212 @@
+@import '~style/variables';
+
+$minister-image-width: 214px;
+
+.heroWrapper {
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-start;
+  height: 550px;
+  margin-top: -$top-nav-height-desktop;
+  background: url('../../../images/hero.jpg');
+  background-size: cover;
+  z-index: 0;
+}
+
+.heroImageFilter {
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  background: $color-overview--700;
+  opacity: 0.4;
+}
+
+.heroTextContainer {
+  position: relative;
+}
+
+.heroText {
+  @include container;
+
+  position: relative; // so it sits in front of the filter
+  width: 100%;
+  font-size: 66px;
+  font-weight: 300;
+  color: $color-white;
+}
+
+.heroTextCityCount {
+  font-weight: 700;
+}
+
+.infoWrapper {
+  background: $color-primary--600;
+  color: $color-white;
+}
+
+.infoContainer {
+  @include container;
+
+  display: flex;
+  padding-top: 32px;
+  padding-bottom: 32px;
+}
+
+.infoTextWrapper {
+  margin-right: 32px;
+}
+
+.photoWrapper {
+  flex: none;
+  width: $minister-image-width;
+  color: $color-white;
+  font-size: 14px;
+  text-align: center;
+}
+
+.ministerPhoto {
+  border-radius: 100%;
+  width: $minister-image-width;
+  height: $minister-image-width;
+  margin-bottom: 16px;
+}
+
+.ministerTitle {
+  font-weight: 700;
+}
+
+.subInfoContainer {
+  @include container;
+
+  padding-top: 32px;
+  padding-bottom: 32px;
+  display: flex;
+  align-items: flex-end;
+}
+
+.subInfoTextWrapper {
+  flex: auto;
+}
+
+.subInfoIcon {
+  flex: none;
+  width: 200px;
+}
+
+.infoTitle,
+.subInfoTitle {
+  font-size: 44px;
+}
+
+.subInfoBodyText,
+.infoBodyText {
+  font-size: 22px;
+  line-height: 37px;
+}
+
+.infoBodyText:not(:first-child) {
+  padding-top: 32px;
+}
+
+.indicatorTypeMarkWrapper {
+  @include container;
+}
+
+.indicatorTypeMark {
+  margin-right: 8px;
+}
+
+//.categoryWrapper {
+//  border-top: 4px solid $color-white;
+//}
+//
+//.category {
+//  @include container;
+//
+//  display: flex;
+//  padding-top: 32px;
+//  padding-bottom: 32px;
+//}
+//
+//.categoryIcon {
+//  flex: none;
+//  display: flex;
+//  align-items: center;
+//  justify-content: center;
+//  width: 100px;
+//  margin-right: 32px;
+//}
+//
+//.categoryTextWrapper {
+//  margin-right: 32px;
+//}
+//
+//.categoryTitle {
+//  font-size: 35px;
+//  margin-bottom: 16px;
+//}
+//
+//.categoryDescription {
+//  margin-bottom: 16px;
+//}
+//
+//.subCategoryWrapperText {
+//  font-size: 14px;
+//  margin-bottom: 8px;
+//}
+//
+//.subCategoryLink {
+//  background: $color-white;
+//  margin-right: 8px;
+//  border-radius: 4px;
+//  padding: 4px 8px;
+//}
+//
+//.indicatorCardAndLink {
+//  flex: none;
+//  display: flex;
+//  flex-direction: column;
+//  justify-content: flex-end;
+//  width: 250px;
+//  margin-left: auto;
+//}
+//
+//.indicatorCard {
+//  margin-bottom: 16px;
+//}
+//
+//.categoryLinkWrapper {
+//  display: flex;
+//  padding: 4px;
+//  border-radius: 10px;
+//}
+//
+//.categoryLinkText {
+//  font-size: 14px;
+//  flex: auto;
+//  text-align: center;
+//  color: $color-white;
+//}
+//
+//.categoryLinkIcon {
+//  flex: none;
+//}
+
+//.footerSpacerWrapper {
+//  margin-bottom: 64px;
+//  background: $color-white;
+//  padding-top: 64px;
+//  padding-bottom: 64px;
+//}
+//
+//.footerSpacerContainer {
+//  @include container;
+//}
+//
+//.footerSpacerLine {
+//  background: $color-primary--040;
+//  height: 2px;
+//}

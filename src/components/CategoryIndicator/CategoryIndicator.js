@@ -11,6 +11,7 @@ import {
 } from '../../constants';
 import style from './CategoryIndicator.scss';
 
+// TODO (davidg): delete this too god dammit.
 const CategoryIndicator = (props) => {
   const categoryColor = getColorVariant(props.category.colorName, '500');
   const cityIdForUrl = props.city ? props.city.id : NO_CITY;
