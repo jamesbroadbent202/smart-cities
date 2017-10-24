@@ -19,7 +19,7 @@ const Pill = (props) => {
       style={{
         ...props.style,
         height: props.height,
-        lineHeight: `${props.height}px`,
+        lineHeight: `${props.height - 4}px`, // allow for 2px border
         borderRadius: props.height / 2,
       }}
     >
@@ -33,7 +33,11 @@ Pill.propTypes = {
   shadow: PropTypes.bool,
   className: PropTypes.string,
   style: PropTypes.object, // eslint-disable-line react/forbid-prop-types
-  children: PropTypes.element, // TODO (davidg): or array?
+  children: PropTypes.oneOfType([
+    PropTypes.array,
+    PropTypes.element,
+    PropTypes.node,
+  ]),
 };
 
 Pill.defaultProps = {

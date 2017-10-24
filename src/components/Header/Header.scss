@@ -113,11 +113,8 @@ header {
   @include type-badge-text;
 
   margin-top: 24px;
-  text-align: center;
-  width: 80px;
-  border: 1px solid $color-badge;
-  border-radius: 17px;
   background: $color-badge;
+  align-self: flex-start;
 }
 
 .title {

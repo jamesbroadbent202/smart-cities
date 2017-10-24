@@ -37,6 +37,7 @@ export const DATA_TYPES = {
 export const LINKS = {
   ORG: 'https://dta.gov.au/',
   CONTACT_US: 'mailto:performance-dashboard@digital.gov.au',
+  CITIES_PERFORMANCE_NETWORK: 'https://cities.dpmc.gov.au/',
 };
 
 export const STRINGS = {

@@ -1,7 +1,7 @@
 @import '~style/variables';
 
 .categoryWrapper {
-  border-top: 4px solid $color-white;
+  border-top: 8px solid $color-white;
 }
 
 .category {
@@ -9,16 +9,20 @@
 
   display: flex;
   padding-top: 32px;
-  padding-bottom: 32px;
+  padding-bottom: 38px;
+
+  // The first category has a smaller padding than the rest
+  .category__context & {
+    padding-top: 8px;
+    padding-bottom: 58px;
+  }
 }
 
 .categoryIcon {
   flex: none;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 100px;
-  margin-right: 32px;
+  width: 115px;
+  padding-top: 32px;
+  margin-right: 40px;
 }
 
 .categoryTextWrapper {
@@ -26,7 +30,8 @@
 }
 
 .categoryTitle {
-  font-size: 35px;
+  font-size: 44px;
+  line-height: 1;
   margin-bottom: 16px;
 
   .category__context & {
@@ -38,39 +43,48 @@
 .categoryDescription {
   margin-bottom: 16px;
   font-size: 22px;
+  line-height: 1.5;
 }
 
 .subCategoryWrapperText {
   font-size: 12px;
   font-weight: 700;
-  margin-bottom: 8px;
+  margin-bottom: 16px;
 }
 
 .subCategoryLink {
-  margin-right: 8px;
-  padding: 0 28px;
+  margin-right: 16px;
+  padding: 0 40px;
   font-size: 14px;
   background: $color-white;
+
+  &:hover {
+    @include shadow(2);
+  }
 }
 
 .indicatorCardAndLink {
   flex: none;
   display: flex;
   flex-direction: column;
-  justify-content: flex-end;
-  width: 250px;
+  justify-content: space-between;
+  width: 256px;
   margin-left: auto;
 }
 
 .indicatorCard {
-  margin-bottom: 16px;
+  margin-top: 48px;
+
+  .category__context & {
+    margin-top: 68px;
+  }
 }
 
 .categoryLinkWrapper {
   display: flex;
   align-items: center;
   width: 100%;
-  padding: 4px;
+  padding: 4px 3px;
   border-radius: 10px;
 }
 
@@ -78,7 +92,6 @@
   flex: auto;
   text-align: center;
   font-size: 14px;
-  //color: $color-white;
 }
 
 .categoryLinkIcon {

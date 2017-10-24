@@ -6,9 +6,11 @@ import Icon from '../Icon/Icon';
 import Pill from '../Pill/Pill';
 import aggregateIndicatorForCities from '../../helpers/aggregateIndicatorForCities';
 import getColorVariant from '../../helpers/getColorVariant';
+import getSubCategorySectionId from '../../helpers/getSubCategorySectionId';
 import {
   CATEGORY_IDS,
   INDICATORS,
+  NO_CITY,
   STRINGS,
 } from '../../constants';
 import COLORS from '../../style/_colors.scss';
@@ -38,6 +40,11 @@ const CategoryOverview = (props) => {
       color: COLORS.WHITE,
     };
 
+  const cityUrlPart = props.city ? props.city.id : NO_CITY;
+  const categoryUrl = `/${cityUrlPart}/${props.category.id}`;
+
+  const categoryShadeColor = getColorVariant(props.category.colorName, '500');
+
   const className = classnames(
     style.categoryWrapper,
     { category__context: isContextCategory },
@@ -55,8 +62,8 @@ const CategoryOverview = (props) => {
           <div className={style.categoryIcon}>
             <Icon
               icon={props.category.iconId}
-              size={100}
-              color={getColorVariant(props.category.colorName, '500')}
+              size={115}
+              color={categoryShadeColor}
             />
           </div>
         )}
@@ -64,47 +71,54 @@ const CategoryOverview = (props) => {
         <div className={style.categoryTextWrapper}>
           <h2 className={style.categoryTitle}>{props.category.name}</h2>
 
-          <p className={style.categoryDescription}>{props.category.description}</p>
+          <p className={style.categoryDescription}>{props.category.shortDescription}</p>
 
           <p className={style.subCategoryWrapperText}>{STRINGS.SUB_CATS_INCLUDE}</p>
 
           <div>
-            {props.category.subCategories.map(subCategory => (
-              <NavLink
-                key={subCategory.name}
-                to="TODO"
-              >
-                <Pill className={style.subCategoryLink} shadow>
-                  {subCategory.name}
-                </Pill>
-              </NavLink>
-            ))}
+            {props.category.subCategories.map((subCategory) => {
+              const url = `/${cityUrlPart}/${props.category.id}#${getSubCategorySectionId(subCategory.name)}`;
+
+              return (
+                <NavLink
+                  key={subCategory.name}
+                  to={url}
+                >
+                  <Pill className={style.subCategoryLink} shadow>
+                    {subCategory.name}
+                  </Pill>
+                </NavLink>
+              );
+            })}
           </div>
         </div>
 
         <div className={style.indicatorCardAndLink}>
           <IndicatorCard
             className={style.indicatorCard}
-            color={getColorVariant(props.category.colorName, '500')}
+            color={categoryShadeColor}
             colorName={props.category.colorName}
             indicator={props.category.heroIndicatorId}
             value={indicatorValue}
             showPerformanceIndicator={false}
           />
 
-          <NavLink to="TODO">
+          <NavLink
+            to={categoryUrl}
+          >
             <Pill
               className={style.categoryLinkWrapper}
               style={categoryLinkStyle}
+              height={30}
             >
               <span className={style.categoryLinkText}>
-                View {props.category.name} section
+                {props.category.name} section
               </span>
 
               <Icon
                 icon={isContextCategory ? 'rightArrowInCircle' : 'rightArrowInCircleInverted'}
                 size={20}
-                color={getColorVariant(props.category.colorName, '500')}
+                color={categoryShadeColor}
               />
             </Pill>
           </NavLink>
@@ -122,7 +136,7 @@ const cityPropShape = {
 CategoryOverview.propTypes = {
   category: PropTypes.shape({
     colorName: PropTypes.string.isRequired,
-    description: PropTypes.string.isRequired,
+    shortDescription: PropTypes.string.isRequired,
     heroIndicatorId: PropTypes.oneOf(Object.keys(INDICATORS)).isRequired,
     id: PropTypes.string.isRequired,
     iconId: PropTypes.string,

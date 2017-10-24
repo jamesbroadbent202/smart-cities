@@ -1,9 +1,21 @@
 @import '~style/variables';
 
+.indicatorTypeMarkWrapper {
+  @include container;
+
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.indicatorTypeMark {
+  margin-right: 8px;
+}
+
 .footerSpacerWrapper {
   background: $color-white;
-  padding-top: 64px;
-  padding-bottom: 64px;
+  padding-top: 68px;
+  padding-bottom: 62px;
 }
 
 .footerSpacerContainer {

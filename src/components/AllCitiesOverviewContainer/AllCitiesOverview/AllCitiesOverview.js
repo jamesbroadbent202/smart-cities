@@ -3,6 +3,8 @@ import PropTypes from 'prop-types';
 import PageWrapper from '../../PageWrapper/PageWrapper';
 import CategoryOverviews from '../../CategoryOverviews/CategoryOverviews';
 import Icon from '../../Icon/Icon';
+import { LINKS } from '../../../constants';
+import taylorAngus from './taylorAngus.png';
 import COLORS from '../../../style/_colors.scss';
 import style from './AllCitiesOverview.scss';
 
@@ -12,8 +14,6 @@ const MINISTER_POSITION = 'Assistant Minister for Cities & Digital Transformatio
 const AllCitiesOverview = props => (
   <PageWrapper>
     <div className={style.heroWrapper}>
-      <div className={style.heroImageFilter} />
-
       <p className={style.heroText}>
         Creating the foundations <br />
         for success across
@@ -33,15 +33,22 @@ const AllCitiesOverview = props => (
           </p>
 
           <p className={style.infoBodyText}>
-            The National Cities Performance Framework will support greater awareness
-            and understanding of Australia’s cities among policy makers and interested Australians.
+            <a
+              className={style.cpnLink}
+              href={LINKS.CITIES_PERFORMANCE_NETWORK}
+              target="_blank"
+              rel="noopener"
+            >
+              The National Cities Performance Framework
+            </a> will support greater awareness and understanding of Australia’s cities
+            among policy makers and interested Australians.
           </p>
         </div>
 
         <figure className={style.photoWrapper}>
           <img
             className={style.ministerPhoto}
-            src="http://lorempixel.com/214/214/animals"
+            src={taylorAngus}
             alt={MINISTER_TITLE}
           />
 
@@ -69,19 +76,8 @@ const AllCitiesOverview = props => (
         className={style.subInfoIcon}
         icon="liveabilityEnvironment"
         size={120}
-        color={COLORS.PRIMARY_700}
+        color={COLORS.PRIMARY_600}
       />
-    </div>
-
-    <div className={style.indicatorTypeMarkWrapper}>
-      <Icon
-        className={style.indicatorTypeMark}
-        color={COLORS.OVERVIEW_900}
-        icon="indicatorTypeMarkSolid"
-        size={22}
-      />
-
-      Performance indicators
     </div>
 
     <CategoryOverviews cities={props.cities} />
