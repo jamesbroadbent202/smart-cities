@@ -40,13 +40,12 @@ function sortChartData(cities, indicator) {
 }
 
 const CityColumnChart = (props) => {
-  // If more than one indicator is passed in, this becomes a stacked column chart
-  const isStacked = props.indicatorIds.length > 1;
+  const isMultiple = props.indicatorIds.length > 1;
   const baseColor = getColorVariant(props.highlightColorDark);
   const chartColors = getColorRange(baseColor, props.indicatorIds.length);
 
   // The indicator data contains things like titles and descriptions. But these can
-  // also be passed in explicitly (e.g. for stacked charts where there are more than one indicator)
+  // also be passed in explicitly (e.g. for charts where there are more than one indicator)
   // so here we take the passed in value, or the value from the first indicator otherwise.
   const firstIndicator = INDICATORS[props.indicatorIds[0]];
 
@@ -77,7 +76,7 @@ const CityColumnChart = (props) => {
 
   // We only want to show the short description as the chart title
   // if the chart is not stacked
-  const yAxisTitle = isStacked ? {} : { text: shortDescription };
+  const yAxisTitle = isMultiple ? {} : { text: shortDescription };
 
   // The below config will be merged with the base config.
   // colors, sizes, etc. that are shared across all charts belong in the base config
@@ -97,7 +96,7 @@ const CityColumnChart = (props) => {
         pointWidth: 6,
       },
       series: {
-        stacking: 'normal',
+        stacking: props.stacked,
         pointWidth: 8,
         borderRadius: 4,
       },
@@ -145,7 +144,7 @@ const CityColumnChart = (props) => {
         chartOptions: {
           chart: {
             height: 400,
-            marginLeft: 15,
+            marginLeft: 20,
           },
           plotOptions: {
             series: {
@@ -170,7 +169,7 @@ const CityColumnChart = (props) => {
   const config = merge({}, baseChartConfig, columnChartConfig);
 
   return (
-    <div className={classnames(style.wrapper, props.className, { [style.stacked]: isStacked })}>
+    <div className={classnames(style.wrapper, props.className, { [style.stacked]: isMultiple })}>
       <div className={style.titleWrapper}>
         <h4 className={style.title}>
           {title}
@@ -183,7 +182,7 @@ const CityColumnChart = (props) => {
         />
       </div>
 
-      {isStacked && (
+      {isMultiple && (
         <Legend
           // Legend is our own HTML so we can style and position it with CSS
           className={style.legendWrapper}
@@ -191,7 +190,7 @@ const CityColumnChart = (props) => {
         />
       )}
 
-      {isStacked || (
+      {isMultiple || (
         <div className={style.descriptionLabel}>
           {shortDescription}
         </div>
@@ -217,6 +216,7 @@ CityColumnChart.propTypes = {
   longDescription: PropTypes.string,
   shortDescription: PropTypes.string,
   title: PropTypes.string,
+  stacked: PropTypes.bool,
 };
 
 export default CityColumnChart;

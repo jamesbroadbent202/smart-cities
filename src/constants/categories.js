@@ -88,38 +88,33 @@ export const CATEGORIES = [
         ],
         charts: [
           {
-            name: 'Youth unemployment',
-            longDescription: 'TODO',
-            indicatorIds: [
-              'unemploymentRateYouth',
-            ],
-          },
-          {
             name: 'Unemployment rate',
-            longDescription: 'TODO',
             indicatorIds: [
               'unemploymentRateGeneral',
             ],
           },
           {
-            name: 'Indigenous unemployment',
-            longDescription: 'TODO',
+            name: 'Unemployment TODO',
             indicatorIds: [
+              'unemploymentRateYouth',
               'unemploymentRateIndigenous',
             ],
           },
           {
             name: 'Participation rate',
-            longDescription: 'TODO',
             indicatorIds: [
               'participationRateGeneral',
+            ],
+          },
+          {
+            name: 'Participation by gender',
+            indicatorIds: [
               'participationRateFemale',
               'participationRateMale',
             ],
           },
           {
             name: 'Employment growth',
-            longDescription: 'TODO',
             indicatorIds: [
               'employmentGrowth',
             ],
@@ -134,7 +129,26 @@ export const CATEGORIES = [
         summaryIndicatorIds: [
           'educationalAttainmentYr12',
         ],
-        charts: [],
+        charts: [
+          {
+            name: 'Education Year 12',
+            indicatorIds: [
+              'educationalAttainmentYr12',
+            ],
+          },
+          {
+            name: 'Education Certificate',
+            indicatorIds: [
+              'educationalAttainmentCertificate',
+            ],
+          },
+          {
+            name: 'Education Tertiary',
+            indicatorIds: [
+              'educationalAttainmentTertiary',
+            ],
+          },
+        ],
       },
     ],
     heroIndicatorId: 'unemploymentRateYouth',
@@ -147,23 +161,81 @@ export const CATEGORIES = [
     description: 'Housing encompasses three broad dimensions: the affordability of housing in our cities; the supply and diversity of new housing stock; and where housing is located, including how accessible it is to jobs and services.',
     subCategories: [
       {
-        name: 'Buying houses',
+        name: 'Housing affordability',
         highlightColorLight: 'HOUSING_040',
         highlightColorDark: 'HOUSING_600',
         iconId: 'housingHousingAffordability',
-        summaryIndicatorIds: [],
-        charts: [],
+        summaryIndicatorIds: [
+          'residentialBuildingApprovalsTotal',
+          'mortgageStress',
+          'medianHousePrice',
+        ],
+        charts: [
+          {
+            name: 'Public housing units',
+            indicatorIds: [
+              'publicHousingUnits',
+            ],
+          },
+          {
+            name: 'Housing construction costs',
+            indicatorIds: [
+              'housingConstructionCosts',
+            ],
+          },
+          {
+            name: 'Mortgage stress',
+            indicatorIds: [
+              'mortgageStress',
+            ],
+          },
+          {
+            name: 'Dwelling price to income ratio',
+            indicatorIds: [
+              'dwellingPriceToIncomeRatio',
+            ],
+          },
+          {
+            name: 'Total residential building approvals',
+            indicatorIds: [
+              'residentialBuildingApprovalsTotal',
+            ],
+          },
+          {
+            name: 'Residential building approvals and growth',
+            indicatorIds: [
+              'residentialBuildingApprovalsGrowth',
+            ],
+          },
+        ],
       },
       {
-        name: 'Living in houses',
+        name: 'Living affordability',
         highlightColorLight: 'HOUSING_060',
         highlightColorDark: 'HOUSING_700',
         iconId: 'housingLivingAffordability',
-        summaryIndicatorIds: [],
-        charts: [],
+        summaryIndicatorIds: [
+          'rentStress',
+          'homelessnessRate',
+          'householdSize',
+        ],
+        charts: [
+          {
+            name: 'Homelessness rate',
+            indicatorIds: [
+              'homelessnessRate',
+            ],
+          },
+          {
+            name: 'Rent stress',
+            indicatorIds: [
+              'rentStress',
+            ],
+          },
+        ],
       },
     ],
-    heroIndicatorId: 'growthRate',
+    heroIndicatorId: 'dwellingPriceToIncomeRatio',
   },
   {
     id: CATEGORY_IDS.INFRASTRUCTURE,
