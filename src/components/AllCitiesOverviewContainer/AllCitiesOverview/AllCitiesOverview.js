@@ -15,8 +15,7 @@ const AllCitiesOverview = props => (
   <PageWrapper>
     <div className={style.heroWrapper}>
       <p className={style.heroText}>
-        Creating the foundations <br />
-        for success across
+        Creating the foundations for success across
         all <span className={style.heroTextCityCount}>{props.cities.length}</span> cities
       </p>
     </div>
@@ -28,7 +27,7 @@ const AllCitiesOverview = props => (
 
           <p className={style.infoBodyText}>
             The Australian Government is committed to the continual improvement of our cities.
-            Governments need to track and compare cities’performance in order to
+            Governments need to track and compare cities’ performance in order to
             make the best policy and investment decisions for Australia’s future.
           </p>
 
@@ -45,12 +44,14 @@ const AllCitiesOverview = props => (
           </p>
         </div>
 
-        <figure className={style.photoWrapper}>
-          <img
-            className={style.ministerPhoto}
-            src={taylorAngus}
-            alt={MINISTER_TITLE}
-          />
+        <figure className={style.ministerPhotoWrapper}>
+          <div className={style.ministerPhotoClip}>
+            <img
+              className={style.ministerPhoto}
+              src={taylorAngus}
+              alt={MINISTER_TITLE}
+            />
+          </div>
 
           <figcaption>
             <p className={style.ministerTitle}>{MINISTER_TITLE}</p>
@@ -74,7 +75,7 @@ const AllCitiesOverview = props => (
 
       <Icon
         className={style.subInfoIcon}
-        icon="liveabilityEnvironment"
+        icon="city"
         size={120}
         color={COLORS.PRIMARY_600}
       />

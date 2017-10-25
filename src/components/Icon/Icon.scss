@@ -49,6 +49,16 @@
   }
 }
 
+.sunSparkles {
+  transform: rotate(0);
+  transform-origin: center;
+  transition: transform 500ms;
+
+  svg:hover & {
+    transform: rotate(90deg);
+  }
+}
+
 // This will be applied to the SVG element itself
 :global(.circleWithShadow) {
   @include shadow(2);

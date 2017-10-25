@@ -5,7 +5,12 @@
 
   display: flex;
   align-items: center;
-  justify-content: flex-end;
+  margin-bottom: 16px;
+
+  @include for-tablet-portrait-up {
+    justify-content: flex-end;
+    margin-bottom: 0;
+  }
 }
 
 .indicatorTypeMark {
@@ -13,9 +18,14 @@
 }
 
 .footerSpacerWrapper {
+  padding-top: 32px;
+  padding-bottom: 32px;
   background: $color-white;
-  padding-top: 68px;
-  padding-bottom: 62px;
+
+  @include for-tablet-portrait-up {
+    padding-top: 68px;
+    padding-bottom: 62px;
+  }
 }
 
 .footerSpacerContainer {
@@ -28,6 +38,10 @@
 }
 
 .footerSpacerShade {
-  height: 64px;
+  height: 32px;
   background: $color-overview--020;
+
+  @include for-tablet-portrait-up {
+    height: 64px;
+  }
 }

@@ -62,66 +62,68 @@ const CategoryOverview = (props) => {
           <div className={style.categoryIcon}>
             <Icon
               icon={props.category.iconId}
-              size={115}
               color={categoryShadeColor}
             />
           </div>
         )}
 
-        <div className={style.categoryTextWrapper}>
-          <h2 className={style.categoryTitle}>{props.category.name}</h2>
+        <div className={style.textAndIndicatorWrapper}>
+          <div className={style.categoryTextWrapper}>
+            <h2 className={style.categoryTitle}>{props.category.name}</h2>
 
-          <p className={style.categoryDescription}>{props.category.shortDescription}</p>
+            <p className={style.categoryDescription}>{props.category.shortDescription}</p>
 
-          <p className={style.subCategoryWrapperText}>{STRINGS.SUB_CATS_INCLUDE}</p>
+            <p className={style.subCategoryWrapperText}>{STRINGS.SUB_CATS_INCLUDE}</p>
 
-          <div>
-            {props.category.subCategories.map((subCategory) => {
-              const url = `/${cityUrlPart}/${props.category.id}#${getSubCategorySectionId(subCategory.name)}`;
+            <div>
+              {props.category.subCategories.map((subCategory) => {
+                const url = `/${cityUrlPart}/${props.category.id}#${getSubCategorySectionId(subCategory.name)}`;
 
-              return (
-                <NavLink
-                  key={subCategory.name}
-                  to={url}
-                >
-                  <Pill className={style.subCategoryLink} shadow>
-                    {subCategory.name}
-                  </Pill>
-                </NavLink>
-              );
-            })}
+                return (
+                  <NavLink
+                    key={subCategory.name}
+                    to={url}
+                  >
+                    <Pill className={style.subCategoryLink} shadow>
+                      {subCategory.name}
+                    </Pill>
+                  </NavLink>
+                );
+              })}
+            </div>
           </div>
-        </div>
 
-        <div className={style.indicatorCardAndLink}>
-          <IndicatorCard
-            className={style.indicatorCard}
-            color={categoryShadeColor}
-            colorName={props.category.colorName}
-            indicator={props.category.heroIndicatorId}
-            value={indicatorValue}
-            showPerformanceIndicator={false}
-          />
+          <div className={style.indicatorCardAndLink}>
+            <IndicatorCard
+              className={style.indicatorCard}
+              color={categoryShadeColor}
+              colorName={props.category.colorName}
+              indicator={props.category.heroIndicatorId}
+              value={indicatorValue}
+              showPerformanceIndicator={false}
+            />
 
-          <NavLink
-            to={categoryUrl}
-          >
-            <Pill
+            <NavLink
+              to={categoryUrl}
               className={style.categoryLinkWrapper}
-              style={categoryLinkStyle}
-              height={30}
             >
-              <span className={style.categoryLinkText}>
-                {props.category.name} section
-              </span>
+              <Pill
+                className={style.categoryLinkPill}
+                style={categoryLinkStyle}
+                height={30}
+              >
+                <span className={style.categoryLinkText}>
+                  {props.category.name} section
+                </span>
 
-              <Icon
-                icon={isContextCategory ? 'rightArrowInCircle' : 'rightArrowInCircleInverted'}
-                size={20}
-                color={categoryShadeColor}
-              />
-            </Pill>
-          </NavLink>
+                <Icon
+                  icon={isContextCategory ? 'rightArrowInCircle' : 'rightArrowInCircleInverted'}
+                  size={20}
+                  color={categoryShadeColor}
+                />
+              </Pill>
+            </NavLink>
+          </div>
         </div>
       </div>
     </div>
