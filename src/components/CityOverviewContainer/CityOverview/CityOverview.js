@@ -1,13 +1,13 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import PageWrapper from '../../PageWrapper/PageWrapper';
 import CategoryOverviews from '../../CategoryOverviews/CategoryOverviews';
 import PageBanner from '../../PageBanner/PageBanner';
+import PageWrapper from '../../PageWrapper/PageWrapper';
 
 const CityOverview = props => (
   <PageWrapper cityId={props.city.id}>
     <PageBanner
-      colorName="primary"
+      colorName="overview"
       description={props.city.description}
       indicator="population"
       title={props.city.shortName}

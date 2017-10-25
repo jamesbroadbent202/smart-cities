@@ -8,10 +8,12 @@ jest.mock('../../Icon/Icon', () => 'Icon');
 const defaultProps = {
   cities: [
     {
-      name: 'Perth',
+      id: 'perth',
+      indices: {},
     },
     {
-      name: 'Sydney',
+      id: 'sydney',
+      indices: {},
     },
   ],
 };

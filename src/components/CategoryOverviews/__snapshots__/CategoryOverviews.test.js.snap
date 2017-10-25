@@ -3,16 +3,18 @@
 exports[`should match Snapshot 1`] = `
 "<div>
   <div className=\\"indicatorTypeMarkWrapper\\">
-    <Icon className=\\"indicatorTypeMark\\" color=\\"OVERVIEW_900\\" icon=\\"indicatorTypeMarkSolid\\" size={22} />
-    Performance indicators
+    <div className=\\"indicatorTypeMarkContainer\\">
+      <Icon className=\\"indicatorTypeMark\\" color=\\"OVERVIEW_900\\" icon=\\"indicatorTypeMarkSolid\\" size={22} />
+      Performance indicators
+    </div>
   </div>
-  <CategoryOverview category={{...}} cities={{...}} city={[undefined]} />
-  <CategoryOverview category={{...}} cities={{...}} city={[undefined]} />
-  <CategoryOverview category={{...}} cities={{...}} city={[undefined]} />
-  <CategoryOverview category={{...}} cities={{...}} city={[undefined]} />
-  <CategoryOverview category={{...}} cities={{...}} city={[undefined]} />
-  <CategoryOverview category={{...}} cities={{...}} city={[undefined]} />
-  <CategoryOverview category={{...}} cities={{...}} city={[undefined]} />
+  <CategoryOverview category={{...}} cities={[undefined]} city={{...}} />
+  <CategoryOverview category={{...}} cities={[undefined]} city={{...}} />
+  <CategoryOverview category={{...}} cities={[undefined]} city={{...}} />
+  <CategoryOverview category={{...}} cities={[undefined]} city={{...}} />
+  <CategoryOverview category={{...}} cities={[undefined]} city={{...}} />
+  <CategoryOverview category={{...}} cities={[undefined]} city={{...}} />
+  <CategoryOverview category={{...}} cities={[undefined]} city={{...}} />
   <div className=\\"footerSpacerWrapper\\">
     <div className=\\"footerSpacerContainer\\">
       <div className=\\"footerSpacerLine\\" />

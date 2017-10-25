@@ -99,13 +99,14 @@ $color-primary--900: #003a45;
 :export {
   // note that these CONTEXT colours use the 'overview' variables
   CONTEXT_020: $color-overview--020;
-  CONTEXT_040: $color-white; // TODO (davidg): obviously not this
   CONTEXT_500: $color-overview--500;
   CONTEXT_600: $color-overview--600;
   CONTEXT_700: $color-overview--700;
   CONTEXT_800: $color-overview--800;
   CONTEXT_900: $color-overview--900;
 
+  OVERVIEW_020: $color-overview--020;
+  OVERVIEW_500: $color-overview--500;
   OVERVIEW_900: $color-overview--900;
 
   PRIMARY_020: $color-primary--020;

@@ -1,8 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { NavLink } from 'react-router-dom';
-import IndicatorCard from '../Card/IndicatorCard/IndicatorCard';
 import Icon from '../Icon/Icon';
+import IndicatorCard from '../Card/IndicatorCard/IndicatorCard';
 import Pill from '../Pill/Pill';
 import aggregateIndicatorForCities from '../../helpers/aggregateIndicatorForCities';
 import getColorVariant from '../../helpers/getColorVariant';
@@ -27,23 +27,26 @@ const CategoryOverview = (props) => {
       props.cities,
     );
 
-  const highlightColor = getColorVariant(props.category.colorName, '500');
+  const categoryDarkColor = getColorVariant(props.category.colorName, '500');
+  const categoryLightColor = isContextCategory
+    ? COLORS.WHITE
+    : getColorVariant(props.category.colorName, '040');
+
   const categoryLinkStyle = isContextCategory
     ? {
       background: COLORS.WHITE,
-      border: `2px solid ${highlightColor}`,
+      border: `2px solid ${categoryDarkColor}`,
       color: COLORS.GREY_700,
     }
     : {
-      background: highlightColor,
-      border: `2px solid ${highlightColor}`,
+      background: categoryDarkColor,
+      border: `2px solid ${categoryDarkColor}`,
       color: COLORS.WHITE,
     };
 
   const cityUrlPart = props.city ? props.city.id : NO_CITY;
   const categoryUrl = `/${cityUrlPart}/${props.category.id}`;
 
-  const categoryShadeColor = getColorVariant(props.category.colorName, '500');
 
   const className = classnames(
     style.categoryWrapper,
@@ -53,16 +56,14 @@ const CategoryOverview = (props) => {
   return (
     <div
       className={className}
-      style={{
-        background: getColorVariant(props.category.colorName, '040'),
-      }}
+      style={{ background: categoryLightColor }}
     >
       <div className={style.category}>
         {!isContextCategory && (
           <div className={style.categoryIcon}>
             <Icon
               icon={props.category.iconId}
-              color={categoryShadeColor}
+              color={categoryDarkColor}
             />
           </div>
         )}
@@ -96,7 +97,7 @@ const CategoryOverview = (props) => {
           <div className={style.indicatorCardAndLink}>
             <IndicatorCard
               className={style.indicatorCard}
-              color={categoryShadeColor}
+              color={categoryDarkColor}
               colorName={props.category.colorName}
               indicator={props.category.heroIndicatorId}
               value={indicatorValue}
@@ -119,7 +120,7 @@ const CategoryOverview = (props) => {
                 <Icon
                   icon={isContextCategory ? 'rightArrowInCircle' : 'rightArrowInCircleInverted'}
                   size={20}
-                  color={categoryShadeColor}
+                  color={categoryDarkColor}
                 />
               </Pill>
             </NavLink>

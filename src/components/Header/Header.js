@@ -1,8 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import CategoryNavContainer from '../CategoryNavContainer/CategoryNavContainer';
-import HamburgerButton from '../HamburgerButton/HamburgerButton';
 import CityHeader from '../CityHeader/CityHeader';
+import HamburgerButton from '../HamburgerButton/HamburgerButton';
 import Pill from '../Pill/Pill';
 import { LINKS } from '../../constants';
 import dtaLogo from './dta-logo.svg';
