@@ -1,6 +1,11 @@
 @import '~style/variables';
 
 .indicatorTypeMarkWrapper {
+  padding: 32px 0;
+  background: $color-overview--020;
+}
+
+.indicatorTypeMarkContainer {
   @include container;
 
   display: flex;

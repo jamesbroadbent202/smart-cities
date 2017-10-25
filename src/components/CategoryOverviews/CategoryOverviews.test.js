@@ -1,6 +1,6 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import CategoryIndicator from './CategoryOverviews';
+import CategoryOverviews from './CategoryOverviews';
 
 jest.mock('../Icon/Icon', () => 'Icon');
 
@@ -32,7 +32,7 @@ const defaultProps = {
 
 it('should match Snapshot', () => {
   const component = shallow(
-    <CategoryIndicator {...defaultProps} />
+    <CategoryOverviews {...defaultProps} />
   );
 
   expect(component.debug()).toMatchSnapshot();
@@ -40,7 +40,7 @@ it('should match Snapshot', () => {
 
 it('should aggregate data for all cities', () => {
   const component = shallow(
-    <CategoryIndicator {...defaultProps} />
+    <CategoryOverviews {...defaultProps} />
   );
 
   expect(component.find('IndicatorCard').prop('value')).toBe(100); // 77 + 23
@@ -48,7 +48,7 @@ it('should aggregate data for all cities', () => {
 
 it('should show data for a single city', () => {
   const component = shallow(
-    <CategoryIndicator
+    <CategoryOverviews
       {...defaultProps}
       cities={undefined}
       city={{
@@ -66,7 +66,7 @@ it('should show data for a single city', () => {
 
 it('should create a link to the all cities category page', () => {
   const component = shallow(
-    <CategoryIndicator {...defaultProps} />
+    <CategoryOverviews {...defaultProps} />
   );
 
   expect(component.find('NavLink').prop('to')).toBe('/all-cities/jobs');
@@ -74,7 +74,7 @@ it('should create a link to the all cities category page', () => {
 
 it('should create a link to the city category page', () => {
   const component = shallow(
-    <CategoryIndicator
+    <CategoryOverviews
       {...defaultProps}
       cities={undefined}
       city={{
@@ -92,7 +92,7 @@ it('should create a link to the city category page', () => {
 
 it('should use the appropriate color', () => {
   const component = shallow(
-    <CategoryIndicator
+    <CategoryOverviews
       {...defaultProps}
     />
   );

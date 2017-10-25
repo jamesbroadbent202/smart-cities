@@ -1,0 +1,23 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should match Snapshot 1`] = `
+"<div>
+  <div className=\\"indicatorTypeMarkWrapper\\">
+    <Icon className=\\"indicatorTypeMark\\" color=\\"OVERVIEW_900\\" icon=\\"indicatorTypeMarkSolid\\" size={22} />
+    Performance indicators
+  </div>
+  <CategoryOverview category={{...}} cities={{...}} city={[undefined]} />
+  <CategoryOverview category={{...}} cities={{...}} city={[undefined]} />
+  <CategoryOverview category={{...}} cities={{...}} city={[undefined]} />
+  <CategoryOverview category={{...}} cities={{...}} city={[undefined]} />
+  <CategoryOverview category={{...}} cities={{...}} city={[undefined]} />
+  <CategoryOverview category={{...}} cities={{...}} city={[undefined]} />
+  <CategoryOverview category={{...}} cities={{...}} city={[undefined]} />
+  <div className=\\"footerSpacerWrapper\\">
+    <div className=\\"footerSpacerContainer\\">
+      <div className=\\"footerSpacerLine\\" />
+    </div>
+  </div>
+  <div className=\\"footerSpacerShade\\" />
+</div>"
+`;

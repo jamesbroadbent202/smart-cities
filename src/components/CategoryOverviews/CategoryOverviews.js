@@ -9,14 +9,16 @@ import style from './CategoryOverviews.scss';
 const CategoryOverviews = props => (
   <div>
     <div className={style.indicatorTypeMarkWrapper}>
-      <Icon
-        className={style.indicatorTypeMark}
-        color={COLORS.OVERVIEW_900}
-        icon="indicatorTypeMarkSolid"
-        size={22}
-      />
+      <div className={style.indicatorTypeMarkContainer}>
+        <Icon
+          className={style.indicatorTypeMark}
+          color={COLORS.OVERVIEW_900}
+          icon="indicatorTypeMarkSolid"
+          size={22}
+        />
 
-      Performance indicators
+        Performance indicators
+      </div>
     </div>
 
     {CATEGORIES.map(category => (

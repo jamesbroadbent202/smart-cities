@@ -8,9 +8,6 @@ import taylorAngus from './taylorAngus.png';
 import COLORS from '../../../style/_colors.scss';
 import style from './AllCitiesOverview.scss';
 
-const MINISTER_TITLE = 'The Hon Angus Taylor MP';
-const MINISTER_POSITION = 'Assistant Minister for Cities & Digital Transformation';
-
 const AllCitiesOverview = props => (
   <PageWrapper>
     <div className={style.heroWrapper}>
@@ -49,14 +46,14 @@ const AllCitiesOverview = props => (
             <img
               className={style.ministerPhoto}
               src={taylorAngus}
-              alt={MINISTER_TITLE}
+              alt="The Honorable Angus Taylor MP"
             />
           </div>
 
           <figcaption>
-            <p className={style.ministerTitle}>{MINISTER_TITLE}</p>
+            <p className={style.ministerTitle}>The Hon Angus Taylor MP</p>
 
-            <p>{MINISTER_POSITION}</p>
+            <p>Assistant Minister for Cities & Digital Transformation</p>
           </figcaption>
         </figure>
       </div>
