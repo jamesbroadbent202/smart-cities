@@ -260,8 +260,8 @@ export default {
     source: 'Dwelling price to income ratio, Ratio',
   },
   jobsCar: {
-    name: 'Proportion of jobs accessible within 30 minutes by Car',
-    shortDescription: 'Proportion of jobs accessible within 30 minutes, By Car, % of all jobs in city',
+    name: 'Jobs accessible within 30 minutes by car',
+    shortDescription: 'Proportion of jobs accessible within 30 minutes by car',
     longDescription: 'TODO',
     dataType: DATA_TYPES.NUMBER,
     aggregationMethod: AGGREGATION_METHODS.MEDIAN,
@@ -398,6 +398,16 @@ export default {
     format: '0[.]0%',
     contextual: false,
     source: 'Annual Building Approvals, population change per Approvals annually, Ratio',
+  },
+  peakDelay: {
+    name: 'Peak travel delay',
+    shortDescription: 'Percentage increase in car trip duration at peak time',
+    longDescription: 'Percentage increase in 30 minute car trip time at AM PM peak compared to no congestion',
+    dataType: DATA_TYPES.NUMBER,
+    aggregationMethod: AGGREGATION_METHODS.MEDIAN,
+    format: '0[.]0%',
+    contextual: false,
+    source: 'Percentage increase in 30 minute car trip time at AM PM peak compared to no congestion, %',
   },
 };
 

@@ -252,11 +252,38 @@ export const CATEGORIES = [
         iconId: 'infrastructureGettingToWork',
         summaryIndicatorIds: [
           'jobsCar',
+          'activeJourneys',
+          'peakDelay',
         ],
-        charts: [],
+        charts: [
+          {
+            name: 'Jobs accessible within 30 minutes by car',
+            indicatorIds: [
+              'jobsCar',
+            ],
+          },
+          {
+            name: 'Share of work trips by public transport',
+            indicatorIds: [
+              'publicJourneys',
+            ],
+          },
+          {
+            name: 'Share of work trips by active transport',
+            indicatorIds: [
+              'activeJourneys',
+            ],
+          },
+          {
+            name: 'Peak travel delay',
+            indicatorIds: [
+              'peakDelay',
+            ],
+          },
+        ],
       },
     ],
-    heroIndicatorId: 'population',
+    heroIndicatorId: 'jobsCar',
   },
   {
     id: CATEGORY_IDS.LIVEABILITY,
