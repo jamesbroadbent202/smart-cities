@@ -83,10 +83,10 @@ $minister-image-width: 214px;
 }
 
 .ministerPhotoWrapper {
+  align-self: center;
   color: $color-white;
   font-size: 14px;
   text-align: center;
-  align-self: center;
 
   @include for-tablet-landscape-up {
     flex: none;
@@ -97,10 +97,10 @@ $minister-image-width: 214px;
 .ministerPhotoClip {
   @include shadow;
 
-  border-radius: 100%;
   width: $minister-image-width;
   height: $minister-image-width;
   margin: 0 auto 16px;
+  border-radius: 100%;
   overflow: hidden;
 }
 
@@ -122,10 +122,10 @@ $minister-image-width: 214px;
 .subInfoContainer {
   @include container;
 
-  padding-top: 42px;
-  padding-bottom: 42px;
   display: flex;
   flex-direction: column;
+  padding-top: 42px;
+  padding-bottom: 42px;
 
   @include for-tablet-portrait-up {
     flex-direction: row;
@@ -146,16 +146,16 @@ $minister-image-width: 214px;
   margin: 0 auto;
 
   @include for-tablet-portrait-up {
-    margin: 14px 0 0; // visually align the top with the title text
     flex: none;
     width: 140px;
+    margin: 14px 0 0; // visually align the top with the title text
   }
 }
 
 .infoTitle,
 .subInfoTitle {
-  font-size: 44px;
   margin-bottom: 32px;
+  font-size: 44px;
   line-height: 1.2;
   letter-spacing: -1.8px;
 }

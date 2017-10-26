@@ -8,7 +8,7 @@ import {
 
 jest.mock('../../Pill/Pill', () => 'Pill');
 jest.mock('react-router-dom', () => ({
-  'NavLink': jest.fn(),
+  NavLink: jest.fn(),
 }));
 
 const mockElement = {
@@ -18,7 +18,7 @@ const mockElement = {
   },
 };
 
-
+// mock this out so that componentDidMount returns the mock element
 document.querySelector = jest.fn(() => mockElement);
 
 const defaultProps = {
