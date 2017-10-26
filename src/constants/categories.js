@@ -438,18 +438,58 @@ export const CATEGORIES = [
         highlightColorDark: 'INNOVATION_600',
         iconId: 'innovationInnovation',
         summaryIndicatorIds: [
-          'broadbandConnectionRate',
+          'householdsWithBroadband',
           'patentApplications',
         ],
-        charts: [],
+        charts: [
+          {
+            name: 'Households with broadband',
+            indicatorIds: [
+              'householdsWithBroadband',
+            ],
+          },
+          {
+            name: 'Patent applications',
+            indicatorIds: [
+              'patentApplications',
+            ],
+          },
+        ],
       },
       {
-        name: 'Digital',
+        name: 'Digital business',
         highlightColorLight: 'INNOVATION_060',
         highlightColorDark: 'INNOVATION_700',
         iconId: 'innovationDigital',
-        summaryIndicatorIds: [],
-        charts: [],
+        summaryIndicatorIds: [
+          'newBusinessEntrants',
+          'knowledgeWorkersRatio',
+          'linkedInConnectivityLocal', // TODO: confirm
+        ],
+        charts: [
+          {
+            name: 'Knowledge workers ratio',
+            indicatorIds: [
+              'knowledgeWorkersRatio',
+            ],
+          },
+          {
+            name: 'New business entrants and exits',
+            indicatorIds: [
+              'newBusinessEntrants',
+              'newBusinessExits',
+            ],
+          },
+          {
+            name: 'LinkedIn connectivity',
+            stacked: true,
+            indicatorIds: [
+              'linkedInConnectivityLocal',
+              'linkedInConnectivityRestOfNation',
+              'linkedInConnectivityInternational',
+            ],
+          },
+        ],
       },
     ],
     heroIndicatorId: 'newBusinessEntrants',
