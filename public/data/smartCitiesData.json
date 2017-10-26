@@ -43,7 +43,8 @@
       "rentStress": 0.15,
       "mortgageStress": 0.15,
       "residentialBuildingApprovalsTotal": 1119,
-      "residentialBuildingApprovalsGrowth": 3.3
+      "residentialBuildingApprovalsGrowth": 3.3,
+      "peakDelay": 0.39
     }
   },
   {
@@ -90,7 +91,8 @@
       "rentStress": 0.32,
       "mortgageStress": 0.25,
       "residentialBuildingApprovalsTotal": 10628,
-      "residentialBuildingApprovalsGrowth": 2.8
+      "residentialBuildingApprovalsGrowth": 2.8,
+      "peakDelay": 0.33
     }
   },
   {
@@ -137,7 +139,8 @@
       "rentStress": 0.24,
       "mortgageStress": 0.22,
       "residentialBuildingApprovalsTotal": 5453,
-      "residentialBuildingApprovalsGrowth": 3
+      "residentialBuildingApprovalsGrowth": 3,
+      "peakDelay": 0.28
     }
   },
   {
@@ -184,7 +187,8 @@
       "rentStress": 0.31,
       "mortgageStress": 0.35,
       "residentialBuildingApprovalsTotal": 6844,
-      "residentialBuildingApprovalsGrowth": 1.9
+      "residentialBuildingApprovalsGrowth": 1.9,
+      "peakDelay": 0.27
     }
   },
   {
@@ -231,7 +235,8 @@
       "rentStress": 0.31,
       "mortgageStress": 0.25,
       "residentialBuildingApprovalsTotal": 11989,
-      "residentialBuildingApprovalsGrowth": 3.8
+      "residentialBuildingApprovalsGrowth": 3.8,
+      "peakDelay": 0.27
     }
   },
   {
@@ -278,7 +283,8 @@
       "rentStress": 0.35,
       "mortgageStress": 0.3,
       "residentialBuildingApprovalsTotal": 5468,
-      "residentialBuildingApprovalsGrowth": 3.4
+      "residentialBuildingApprovalsGrowth": 3.4,
+      "peakDelay": 0
     }
   },
   {
@@ -325,7 +331,8 @@
       "rentStress": 0.33,
       "mortgageStress": 0.28,
       "residentialBuildingApprovalsTotal": 8646,
-      "residentialBuildingApprovalsGrowth": 2.2
+      "residentialBuildingApprovalsGrowth": 2.2,
+      "peakDelay": 0.27
     }
   },
   {
@@ -372,7 +379,8 @@
       "rentStress": 0.2,
       "mortgageStress": 0.35,
       "residentialBuildingApprovalsTotal": 8929,
-      "residentialBuildingApprovalsGrowth": 2.1
+      "residentialBuildingApprovalsGrowth": 2.1,
+      "peakDelay": 0.23
     }
   },
   {
@@ -419,7 +427,8 @@
       "rentStress": 0.25,
       "mortgageStress": 0.2,
       "residentialBuildingApprovalsTotal": 8365,
-      "residentialBuildingApprovalsGrowth": 3.8
+      "residentialBuildingApprovalsGrowth": 3.8,
+      "peakDelay": 0.2
     }
   },
   {
@@ -466,7 +475,8 @@
       "rentStress": 0.23,
       "mortgageStress": 0.34,
       "residentialBuildingApprovalsTotal": 19302,
-      "residentialBuildingApprovalsGrowth": 4
+      "residentialBuildingApprovalsGrowth": 4,
+      "peakDelay": 0
     }
   },
   {
@@ -513,7 +523,8 @@
       "rentStress": 0.3,
       "mortgageStress": 0.3,
       "residentialBuildingApprovalsTotal": 11062,
-      "residentialBuildingApprovalsGrowth": 3.8
+      "residentialBuildingApprovalsGrowth": 3.8,
+      "peakDelay": 0.19
     }
   },
   {
@@ -560,7 +571,8 @@
       "rentStress": 0.27,
       "mortgageStress": 0.25,
       "residentialBuildingApprovalsTotal": 19611,
-      "residentialBuildingApprovalsGrowth": 1.7
+      "residentialBuildingApprovalsGrowth": 1.7,
+      "peakDelay": 0.32
     }
   },
   {
@@ -607,7 +619,8 @@
       "rentStress": 0.33,
       "mortgageStress": 0.22,
       "residentialBuildingApprovalsTotal": 5417,
-      "residentialBuildingApprovalsGrowth": 1.2
+      "residentialBuildingApprovalsGrowth": 1.2,
+      "peakDelay": 0
     }
   },
   {
@@ -654,7 +667,8 @@
       "rentStress": 0.19,
       "mortgageStress": 0.15,
       "residentialBuildingApprovalsTotal": 656,
-      "residentialBuildingApprovalsGrowth": 3.3
+      "residentialBuildingApprovalsGrowth": 3.3,
+      "peakDelay": 0
     }
   },
   {
@@ -701,7 +715,8 @@
       "rentStress": 0.3,
       "mortgageStress": 0.24,
       "residentialBuildingApprovalsTotal": 16229,
-      "residentialBuildingApprovalsGrowth": 2.1
+      "residentialBuildingApprovalsGrowth": 2.1,
+      "peakDelay": 0
     }
   },
   {
@@ -748,7 +763,8 @@
       "rentStress": 0.22,
       "mortgageStress": 0.19,
       "residentialBuildingApprovalsTotal": 9461,
-      "residentialBuildingApprovalsGrowth": 2.8
+      "residentialBuildingApprovalsGrowth": 2.8,
+      "peakDelay": 0
     }
   },
   {
@@ -795,7 +811,8 @@
       "rentStress": 0.24,
       "mortgageStress": 0.33,
       "residentialBuildingApprovalsTotal": 15903,
-      "residentialBuildingApprovalsGrowth": 1.3
+      "residentialBuildingApprovalsGrowth": 1.3,
+      "peakDelay": 0
     }
   },
   {
@@ -842,7 +859,8 @@
       "rentStress": 0.34,
       "mortgageStress": 0.2,
       "residentialBuildingApprovalsTotal": 13947,
-      "residentialBuildingApprovalsGrowth": 3.7
+      "residentialBuildingApprovalsGrowth": 3.7,
+      "peakDelay": 0
     }
   },
   {
@@ -889,7 +907,8 @@
       "rentStress": 0.32,
       "mortgageStress": 0.21,
       "residentialBuildingApprovalsTotal": 16925,
-      "residentialBuildingApprovalsGrowth": 3.3
+      "residentialBuildingApprovalsGrowth": 3.3,
+      "peakDelay": 0
     }
   },
   {
@@ -936,7 +955,8 @@
       "rentStress": 0.3,
       "mortgageStress": 0.21,
       "residentialBuildingApprovalsTotal": 1752,
-      "residentialBuildingApprovalsGrowth": 2.6
+      "residentialBuildingApprovalsGrowth": 2.6,
+      "peakDelay": 0
     }
   },
   {
@@ -983,7 +1003,8 @@
       "rentStress": 0.34,
       "mortgageStress": 0.28,
       "residentialBuildingApprovalsTotal": 17939,
-      "residentialBuildingApprovalsGrowth": 4
+      "residentialBuildingApprovalsGrowth": 4,
+      "peakDelay": 0
     }
   },
   {
@@ -1030,7 +1051,8 @@
       "rentStress": 0.3,
       "mortgageStress": 0.23,
       "residentialBuildingApprovalsTotal": 7917,
-      "residentialBuildingApprovalsGrowth": 3.2
+      "residentialBuildingApprovalsGrowth": 3.2,
+      "peakDelay": 0
     }
   }
 ]

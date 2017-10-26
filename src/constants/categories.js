@@ -241,7 +241,7 @@ export const CATEGORIES = [
     id: CATEGORY_IDS.INFRASTRUCTURE,
     colorName: COLOR_NAMES.INFRASTRUCTURE,
     iconId: 'infrastructureGettingToWork',
-    name: 'Infrastructure & Other Things',
+    name: 'Infrastructure and Investment',
     navName: 'Infrastructure',
     description: 'Infrastructure and Investment encompasses all key dimensions of the city’s investment environment, with a particular focus on the quality, efficiency and effectiveness of infrastructure.',
     subCategories: [
@@ -297,25 +297,139 @@ export const CATEGORIES = [
         highlightColorLight: 'LIVEABILITY_040',
         highlightColorDark: 'LIVEABILITY_600',
         iconId: 'liveabilityEnvironment',
-        summaryIndicatorIds: [],
-        charts: [],
+        summaryIndicatorIds: [
+          'accessToPublicTransport',
+          'grossParklandArea',
+          'greenhouseGasEmissions',
+        ],
+        charts: [
+          {
+            name: 'Access to green space',
+            indicatorIds: [
+              'accessToGreenSpace',
+            ],
+          },
+          {
+            name: 'Gross parkland area',
+            indicatorIds: [
+              'grossParklandArea',
+            ],
+          },
+          {
+            name: 'Air pollution, more than 10 parts per million',
+            indicatorIds: [
+              'airPollutionPm10',
+            ],
+          },
+          {
+            name: 'Air pollution, less than 2.5 parts per million',
+            indicatorIds: [
+              'airPollutionPm2point5',
+            ],
+          },
+          {
+            name: 'Climate emmissions',
+            indicatorIds: [
+              'greenhouseGasEmissions',
+            ],
+          },
+          {
+            name: 'Energy efficiency of buildings',
+            indicatorIds: [
+              'energyEfficiencyOfBuildings',
+            ],
+          },
+          {
+            name: 'Access to public transport',
+            indicatorIds: [
+              'accessToPublicTransport',
+            ],
+          },
+        ],
       },
       {
         name: 'Liveability',
         highlightColorLight: 'LIVEABILITY_060',
         highlightColorDark: 'LIVEABILITY_700',
         iconId: 'liveabilityLiveability',
-        summaryIndicatorIds: [],
-        charts: [],
+        summaryIndicatorIds: [
+          'volunteeringRate',
+          'perceivedSafety',
+          'adultObesity',
+        ],
+        charts: [
+          {
+            name: 'Volunteering',
+            indicatorIds: [
+              'volunteeringRate',
+            ],
+          },
+        ],
+      },
+      {
+        name: 'Public safety',
+        highlightColorLight: 'LIVEABILITY_080',
+        highlightColorDark: 'LIVEABILITY_800',
+        iconId: 'liveabilityPublicSafety',
+        summaryIndicatorIds: [
+          'perceivedSafety',
+          'homicideRate',
+          'crisisSupport',
+        ],
+        charts: [
+          {
+            name: 'Homicide rate',
+            indicatorIds: [
+              'homicideRate',
+            ],
+          },
+          {
+            name: 'Perceived safety',
+            indicatorIds: [
+              'perceivedSafety',
+            ],
+          },
+          {
+            name: 'Support in times of crisis',
+            indicatorIds: [
+              'crisisSupport',
+            ],
+          },
+        ],
+      },
+      {
+        name: 'Life and death',
+        highlightColorLight: 'LIVEABILITY_100',
+        highlightColorDark: 'LIVEABILITY_900',
+        iconId: 'liveabilityLifeAndDeath',
+        summaryIndicatorIds: [
+          'adultObesity',
+          'suicideRate',
+        ],
+        charts: [
+          {
+            name: 'Adult obesity rate',
+            indicatorIds: [
+              'adultObesity',
+            ],
+          },
+          {
+            name: 'Suicide rate',
+            indicatorIds: [
+              'suicideRate',
+            ],
+          },
+        ],
       },
     ],
-    heroIndicatorId: 'dispersion',
+    heroIndicatorId: 'accessToGreenSpace',
   },
   {
     id: CATEGORY_IDS.INNOVATION,
     colorName: COLOR_NAMES.INNOVATION,
     iconId: 'innovationInnovation',
-    name: 'Innovation',
+    name: 'Innovation and Digital Opportunities',
+    navName: 'Innovation',
     description: 'Innovation and Digital Opportunities encompasses three broad dimensions: city productivity; innovation and entrepreneurship; and access to public data',
     subCategories: [
       {
@@ -323,7 +437,10 @@ export const CATEGORIES = [
         highlightColorLight: 'INNOVATION_040',
         highlightColorDark: 'INNOVATION_600',
         iconId: 'innovationInnovation',
-        summaryIndicatorIds: [],
+        summaryIndicatorIds: [
+          'broadbandConnectionRate',
+          'patentApplications',
+        ],
         charts: [],
       },
       {
@@ -335,7 +452,7 @@ export const CATEGORIES = [
         charts: [],
       },
     ],
-    heroIndicatorId: 'population',
+    heroIndicatorId: 'newBusinessEntrants',
   },
   {
     id: CATEGORY_IDS.PLANNING,
