@@ -28,7 +28,60 @@ export const CATEGORIES = [
           'growthRate',
           'population10yr',
         ],
-        charts: [],
+        charts: [
+          {
+            name: 'Total population',
+            indicatorIds: [
+              'population',
+            ],
+          },
+          {
+            name: 'Population growth',
+            indicatorIds: [
+              'growthRate',
+              'population10yr',
+            ],
+          },
+          {
+            name: 'Indigenous population',
+            indicatorIds: [
+              'indigenousPopulation',
+            ],
+          },
+          {
+            name: 'Population density',
+            indicatorIds: [
+              'populationDensity',
+            ],
+          },
+          {
+            name: 'Age dependency ratio',
+            stacked: true,
+            indicatorIds: [
+              'dependencyRatio14OrYounger',
+              'dependencyRatio15To64',
+              'dependencyRatio65OrOlder',
+            ],
+          },
+          {
+            name: 'Dependency, not of working age',
+            indicatorIds: [
+              'dependencyRatioNotWorkingAge',
+            ],
+          },
+          {
+            name: 'Dependency ratio median age',
+            indicatorIds: [
+              'dependencyRatioMedianAge',
+            ],
+          },
+          {
+            name: 'Disability rate',
+            indicatorIds: [
+              'Disability, all persons, % of population',
+            ],
+          },
+        ],
       },
       {
         name: 'Housing',
@@ -36,11 +89,43 @@ export const CATEGORIES = [
         highlightColorDark: 'HOUSING_500',
         iconId: 'housingHousingAffordability',
         summaryIndicatorIds: [
-          'householdSize',
-          'medianHousePrice',
-          'householdIncome',
+          'tenureRatioOwnedOutright',
+          'tenureRatioMortgage',
+          'tenureRatioRented',
         ],
-        charts: [],
+        charts: [
+          {
+            name: 'Dwelling type ratio',
+            type: 'stacked',
+            indicatorIds: [
+              'dwellingApartment',
+              'dwellingSemi',
+              'dwellingHouse',
+              'dwellingOther',
+            ],
+          },
+          {
+            name: 'Average household size',
+            indicatorIds: [
+              'householdSize',
+            ],
+          },
+          {
+            name: 'Housing tenure',
+            indicatorIds: [
+              'tenureRatioOwnedOutright',
+              'tenureRatioMortgage',
+              'tenureRatioRented',
+              'tenureRatioOther',
+            ],
+          },
+          {
+            name: 'Median house price',
+            indicatorIds: [
+              'medianHousePrice',
+            ],
+          },
+        ],
       },
       {
         name: 'Liveability',
@@ -52,7 +137,32 @@ export const CATEGORIES = [
           'shareInBottomIncomeQuintile',
           'socioEconomicIndex',
         ],
-        charts: [],
+        charts: [
+          {
+            name: 'Life expectancy at birth',
+            indicatorIds: [
+              'lifeExpectancy',
+            ],
+          },
+          {
+            name: 'Households in bottom 20% income',
+            indicatorIds: [
+              'shareInBottomIncomeQuintile',
+            ],
+          },
+          {
+            name: 'Socio-Economic Indexes for Areas',
+            indicatorIds: [
+              'socioEconomicIndex',
+            ],
+          },
+          {
+            name: 'Languages other than English',
+            indicatorIds: [
+              'languagesOtherThanEnglish',
+            ],
+          },
+        ],
       },
       {
         name: 'Jobs & Skills',
@@ -64,7 +174,17 @@ export const CATEGORIES = [
           'marketServices',
           'nonMarketServices',
         ],
-        charts: [],
+        charts: [
+          {
+            name: 'Industry share of employment',
+            stacked: true,
+            indicatorIds: [
+              'goodsProducingSector',
+              'marketServices',
+              'nonMarketServices',
+            ],
+          },
+        ],
       },
     ],
     heroIndicatorId: 'population',
@@ -354,7 +474,7 @@ export const CATEGORIES = [
         iconId: 'liveabilityLiveability',
         summaryIndicatorIds: [
           'volunteeringRate',
-          'perceivedSafety',
+          // 'perceivedSafety',
           'adultObesity',
         ],
         charts: [
@@ -372,7 +492,7 @@ export const CATEGORIES = [
         highlightColorDark: 'LIVEABILITY_800',
         iconId: 'liveabilityPublicSafety',
         summaryIndicatorIds: [
-          'perceivedSafety',
+          // 'perceivedSafety',
           'homicideRate',
           'crisisSupport',
         ],
@@ -383,12 +503,12 @@ export const CATEGORIES = [
               'homicideRate',
             ],
           },
-          {
-            name: 'Perceived safety',
-            indicatorIds: [
-              'perceivedSafety',
-            ],
-          },
+          // {
+          //   name: 'Perceived safety',
+          //   indicatorIds: [
+          //     'perceivedSafety',
+          //   ],
+          // },
           {
             name: 'Support in times of crisis',
             indicatorIds: [
@@ -502,20 +622,86 @@ export const CATEGORIES = [
     description: 'Governance, Planning and Regulation encompasses land use planning in cities and its administration, as well as how effectively local governance and regulation support economic, social and environmental outcomes.',
     subCategories: [
       {
+        name: 'Planning',
+        highlightColorLight: 'PLANNING_020',
+        highlightColorDark: 'PLANNING_500',
+        iconId: 'planningLocalGovernment',
+        summaryIndicatorIds: [
+          'indigenousPopulation',
+          'growthRate',
+          'population10yr',
+        ],
+        charts: [
+          {
+            name: 'Total population',
+            indicatorIds: [
+              'population',
+            ],
+          },
+          {
+            name: 'Population growth',
+            indicatorIds: [
+              'growthRate',
+              'population10yr',
+            ],
+          },
+          {
+            name: 'Indigenous population',
+            indicatorIds: [
+              'indigenousPopulation',
+            ],
+          },
+          {
+            name: 'Population density',
+            indicatorIds: [
+              'populationDensity',
+            ],
+          },
+          {
+            name: 'Age dependency ratio',
+            stacked: true,
+            indicatorIds: [
+              'dependencyRatio14OrYounger',
+              'dependencyRatio15To64',
+              'dependencyRatio65OrOlder',
+            ],
+          },
+          {
+            name: 'Dependency, not of working age',
+            indicatorIds: [
+              'dependencyRatioNotWorkingAge',
+            ],
+          },
+          {
+            name: 'Dependency ratio median age',
+            indicatorIds: [
+              'dependencyRatioMedianAge',
+            ],
+          },
+          {
+            name: 'Disability rate',
+            indicatorIds: [
+              'Disability, all persons, % of population',
+            ],
+          },
+        ],
+      },
+      {
         name: 'Local government',
         highlightColorLight: 'PLANNING_040',
         highlightColorDark: 'PLANNING_600',
         iconId: 'planningLocalGovernment',
-        summaryIndicatorIds: [],
-        charts: [],
-      },
-      {
-        name: 'Population',
-        highlightColorLight: 'PLANNING_060',
-        highlightColorDark: 'PLANNING_700',
-        iconId: 'planningPopulation',
-        summaryIndicatorIds: [],
-        charts: [],
+        summaryIndicatorIds: [
+          'dispersion',
+        ],
+        charts: [
+          {
+            name: 'Local government dispersion',
+            indicatorIds: [
+              'dispersion',
+            ],
+          },
+        ],
       },
     ],
     heroIndicatorId: 'population',
