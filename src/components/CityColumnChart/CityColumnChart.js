@@ -78,6 +78,8 @@ const CityColumnChart = (props) => {
   // if the chart is not stacked
   const yAxisTitle = isMultiple ? {} : { text: shortDescription };
 
+  const ceiling = props.ceiling || (props.stacked ? 1 : null);
+
   // The below config will be merged with the base config.
   // colors, sizes, etc. that are shared across all charts belong in the base config
   // Anything specific to *column* charts belongs here.
@@ -112,7 +114,7 @@ const CityColumnChart = (props) => {
       },
     },
     yAxis: {
-      ceiling: props.ceiling,
+      ceiling,
       labels: {
         padding: 0,
         x: 0,

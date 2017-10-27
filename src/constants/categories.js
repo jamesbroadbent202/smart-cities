@@ -78,7 +78,7 @@ export const CATEGORIES = [
           {
             name: 'Disability rate',
             indicatorIds: [
-              'Disability, all persons, % of population',
+              'disabilityRate',
             ],
           },
         ],
@@ -96,7 +96,7 @@ export const CATEGORIES = [
         charts: [
           {
             name: 'Dwelling type ratio',
-            type: 'stacked',
+            stacked: true,
             indicatorIds: [
               'dwellingApartment',
               'dwellingSemi',
@@ -112,6 +112,7 @@ export const CATEGORIES = [
           },
           {
             name: 'Housing tenure',
+            stacked: 'true',
             indicatorIds: [
               'tenureRatioOwnedOutright',
               'tenureRatioMortgage',
@@ -208,13 +209,13 @@ export const CATEGORIES = [
         ],
         charts: [
           {
-            name: 'Unemployment rate',
+            name: 'Unemployment',
             indicatorIds: [
               'unemploymentRateGeneral',
             ],
           },
           {
-            name: 'Unemployment TODO',
+            name: 'Unemployment ratios',
             indicatorIds: [
               'unemploymentRateYouth',
               'unemploymentRateIndigenous',
@@ -448,7 +449,7 @@ export const CATEGORIES = [
             ],
           },
           {
-            name: 'Climate emmissions',
+            name: 'Climate emissions',
             indicatorIds: [
               'greenhouseGasEmissions',
             ],
@@ -584,7 +585,7 @@ export const CATEGORIES = [
         summaryIndicatorIds: [
           'newBusinessEntrants',
           'knowledgeWorkersRatio',
-          'linkedInConnectivityLocal', // TODO: confirm
+          'linkedInConnectivityLocal',
         ],
         charts: [
           {
@@ -681,7 +682,7 @@ export const CATEGORIES = [
           {
             name: 'Disability rate',
             indicatorIds: [
-              'Disability, all persons, % of population',
+              'disabilityRate',
             ],
           },
         ],
