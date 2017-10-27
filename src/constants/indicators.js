@@ -750,16 +750,3 @@ export default {
     source: 'Language other than English spoken at home, All persons, % of population',
   },
 };
-
-/*
-  : {
-    name: '',
-    shortDescription: '',
-    longDescription: '',
-    dataType: DATA_TYPES.NUMBER,
-    aggregationMethod: AGGREGATION_METHODS.MEDIAN,
-    format: '0[.]0%',
-    contextual: false,
-    source: '',
-  },
-*/
