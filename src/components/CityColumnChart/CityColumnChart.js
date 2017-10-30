@@ -11,7 +11,6 @@ import getColorRange from '../../helpers/getColorRange';
 import getColorVariant from '../../helpers/getColorVariant';
 import {
   COLOR_NAMES,
-  DATA_TYPES,
   INDICATORS,
 } from '../../constants';
 import style from './CityColumnChart.scss';
@@ -48,17 +47,6 @@ const CityColumnChart = (props) => {
   // also be passed in explicitly (e.g. for charts where there are more than one indicator)
   // so here we take the passed in value, or the value from the first indicator otherwise.
   const firstIndicator = INDICATORS[props.indicatorIds[0]];
-
-  // check for indicators that don't have a numeric data type
-  const hasNonNumericIndicators = props.indicatorIds.find(
-    indicatorId => INDICATORS[indicatorId].dataType !== DATA_TYPES.NUMBER,
-  );
-
-  if (hasNonNumericIndicators) {
-    console.warn(`All indicators passed to a column chart must be numeric. Check ${props.indicatorIds}`);
-    return null;
-  }
-
   const title = props.title || firstIndicator.name;
   const shortDescription = props.shortDescription || firstIndicator.shortDescription;
   const longDescription = props.longDescription || firstIndicator.longDescription;
@@ -98,7 +86,7 @@ const CityColumnChart = (props) => {
         pointWidth: 6,
       },
       series: {
-        stacking: props.stacked,
+        stacking: props.stacked ? 'normal' : null,
         pointWidth: 8,
         borderRadius: 4,
       },
