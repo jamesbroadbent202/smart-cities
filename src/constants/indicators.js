@@ -421,7 +421,7 @@ export default {
     source: 'Air quality, Annual mean, <PM2.5, ug/m3',
   },
   energyEfficiencyOfBuildings: {
-    name: 'Energy effiency of buildings',
+    name: 'Energy efficiency of buildings',
     shortDescription: 'Average energy efficiency rating of commercial buildings',
     longDescription: 'Average energy efficiency rating of commercial buildings',
     aggregationMethod: AGGREGATION_METHODS.MEDIAN,

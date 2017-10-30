@@ -65,8 +65,7 @@ const CityColumnChart = (props) => {
   // We only want to show the short description as the chart title
   // if the chart is not stacked
   const yAxisTitle = isMultiple ? {} : { text: shortDescription };
-
-  const ceiling = props.ceiling || (props.stacked ? 1 : null);
+  const ceiling = props.stacked ? 1 : null;
 
   // The below config will be merged with the base config.
   // colors, sizes, etc. that are shared across all charts belong in the base config
@@ -197,7 +196,6 @@ const cityType = PropTypes.shape({
 });
 
 CityColumnChart.propTypes = {
-  ceiling: PropTypes.number,
   cities: PropTypes.arrayOf(cityType).isRequired,
   city: cityType,
   className: PropTypes.string,
