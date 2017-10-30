@@ -154,7 +154,7 @@ export const CATEGORIES = [
             ],
           },
           {
-            name: 'Socio-Economic Indexes for Areas',
+            name: 'Socio-economic indexes for areas',
             indicatorIds: [
               'socioEconomicIndex',
             ],
