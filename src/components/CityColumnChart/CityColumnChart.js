@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
 import { AbstractWidget } from '@gov.au/datavizkit';
@@ -15,10 +15,20 @@ import {
 } from '../../constants';
 import style from './CityColumnChart.scss';
 
-function getSeriesDataForIndicator(cities, indicator) {
+function getSeriesDataForIndicator(cities, indicator, mainCity = null) {
   return cities.map((city) => {
     if (indicator in city.indices) {
-      return city.indices[indicator];
+      const val = city.indices[indicator];
+
+      if (mainCity) {
+        if (mainCity.name === city.name) {
+          return val;
+        }
+
+        return { y: val, color: 'gray' };
+      }
+
+      return val;
     }
 
     console.warn(`${indicator} is not a recognised indicator for ${city.name}`);
@@ -38,157 +48,185 @@ function sortChartData(cities, indicator) {
   return sortedCities;
 }
 
-const CityColumnChart = (props) => {
-  const isMultiple = props.indicatorIds.length > 1;
-  const baseColor = getColorVariant(props.highlightColorDark);
-  const chartColors = getColorRange(baseColor, props.indicatorIds.length);
+function getPlotBands(cities, city, color) {
+  if (city) {
+    const idx = cities.findIndex(el => el.name === city.name);
 
-  // The indicator data contains things like titles and descriptions. But these can
-  // also be passed in explicitly (e.g. for charts where there are more than one indicator)
-  // so here we take the passed in value, or the value from the first indicator otherwise.
-  const firstIndicator = INDICATORS[props.indicatorIds[0]];
-  const title = props.title || firstIndicator.name;
-  const shortDescription = props.shortDescription || firstIndicator.shortDescription;
-  const longDescription = props.longDescription || firstIndicator.longDescription;
+    return [{
+      color,
+      from: idx - 0.5,
+      to: idx + 0.5,
+    }];
+  }
 
-  const data = sortChartData(props.cities, props.indicatorIds[0]);
+  return [];
+}
 
-  // series is an array even if there is only one indicator
-  // so this works for a normal or a stacked chart
-  const series = props.indicatorIds.map((indicatorId, i) => ({
-    index: props.indicatorIds.length - i, // reverse sort the series (to counteract Highcharts)
-    name: INDICATORS[indicatorId].shortDescription,
-    color: chartColors[i],
-    data: getSeriesDataForIndicator(data, indicatorId),
-  }));
+class CityColumnChart extends Component {
+  render() {
+    const isMultiple = this.props.indicatorIds.length > 1;
+    const baseColor = getColorVariant(this.props.highlightColorDark);
+    const chartColors = getColorRange(baseColor, this.props.indicatorIds.length);
 
-  // We only want to show the short description as the chart title
-  // if the chart is not stacked
-  const yAxisTitle = isMultiple ? {} : { text: shortDescription };
-  const ceiling = props.stacked ? 1 : null;
+    // The indicator data contains things like titles and descriptions. But these can
+    // also be passed in explicitly (e.g. for charts where there are more than one indicator)
+    // so here we take the passed in value, or the value from the first indicator otherwise.
+    const firstIndicator = INDICATORS[this.props.indicatorIds[0]];
+    const title = this.props.title || firstIndicator.name;
+    const shortDescription = this.props.shortDescription || firstIndicator.shortDescription;
+    const longDescription = this.props.longDescription || firstIndicator.longDescription;
+    const mainCity = this.props.city;
 
-  // The below config will be merged with the base config.
-  // colors, sizes, etc. that are shared across all charts belong in the base config
-  // Anything specific to *column* charts belongs here.
-  const columnChartConfig = {
-    series,
-    chart: {
-      type: 'column',
-      height: 500,
-      marginLeft: 60,
-      marginRight: 0,
-    },
-    plotOptions: {
-      bar: {
-        animation: false,
-        borderRadius: 4,
-        pointWidth: 6,
+    const data = sortChartData(this.props.cities, this.props.indicatorIds[0]);
+
+    // series is an array even if there is only one indicator
+    // so this works for a normal or a stacked chart
+    const series = this.props.indicatorIds.map((indicatorId, i) => ({
+      index: this.props.indicatorIds.length - i, // reverse sort series (to counteract Highcharts)
+      name: INDICATORS[indicatorId].shortDescription,
+      color: chartColors[i],
+      data: getSeriesDataForIndicator(data, indicatorId, mainCity),
+    }));
+
+    // We only want to show the short description as the chart title
+    // if the chart is not stacked
+    const yAxisTitle = isMultiple ? {} : { text: shortDescription };
+    const ceiling = this.props.stacked ? 1 : null;
+    const plotBands = getPlotBands(data, mainCity, getColorVariant(this.props.colorBase, '060'));
+
+    // The below config will be merged with the base config.
+    // colors, sizes, etc. that are shared across all charts belong in the base config
+    // Anything specific to *column* charts belongs here.
+    const columnChartConfig = {
+      series,
+      chart: {
+        type: 'column',
+        height: 500,
+        marginLeft: 60,
+        marginRight: 0,
       },
-      series: {
-        stacking: props.stacked ? 'normal' : null,
-        pointWidth: 8,
-        borderRadius: 4,
-      },
-    },
-    xAxis: {
-      type: 'category',
-      categories: data.map(city => city.name),
-      labels: {
-        rotation: -45,
-        style: {
-          fontSize: '10px',
+      plotOptions: {
+        bar: {
+          animation: false,
+          borderRadius: 4,
+          pointWidth: 6,
         },
-      },
-    },
-    yAxis: {
-      ceiling,
-      labels: {
-        padding: 0,
-        x: 0,
-        y: 3,
-        formatter() {
-          // format the number using the indicator's defined format, if available
-          return firstIndicator.format
-            ? numeral(this.value).format(firstIndicator.format)
-            : this.value;
-        },
-      },
-      title: yAxisTitle,
-      gridZIndex: 4, // magic highcharts value to position grid lines in front of the bars: http://api.highcharts.com/highcharts/yAxis.gridZIndex
-    },
-    title: {
-      enabled: false,
-    },
-    tooltip: {
-      enabled: false,
-    },
-    legend: {
-      enabled: false,
-    },
-    responsive: {
-      rules: [{
-        condition: {
-          maxWidth: 450,
-        },
-        chartOptions: {
-          chart: {
-            height: 400,
-            marginLeft: 20,
-          },
-          plotOptions: {
-            series: {
-              pointWidth: 3,
-              borderRadius: 2,
+        series: {
+          stacking: this.props.stacked ? 'normal' : null,
+          pointWidth: 8,
+          borderRadius: 4,
+          states: {
+            hover: {
+              color: null,
             },
           },
-          xAxis: {
-            labels: {
-              rotation: -90,
-              padding: 0,
-              style: {
-                fontSize: '9px',
+        },
+      },
+      xAxis: {
+        type: 'category',
+        categories: data.map(city => city.name),
+        labels: {
+          rotation: -45,
+          style: {
+            fontSize: '10px',
+          },
+        },
+        plotBands,
+      },
+      yAxis: {
+        ceiling,
+        labels: {
+          padding: 0,
+          x: 0,
+          y: 3,
+          formatter() {
+            // format the number using the indicator's defined format, if available
+            return firstIndicator.format
+              ? numeral(this.value).format(firstIndicator.format)
+              : this.value;
+          },
+        },
+        title: yAxisTitle,
+        gridZIndex: 4, // magic highcharts value to position grid lines in front of the bars: http://api.highcharts.com/highcharts/yAxis.gridZIndex
+      },
+      title: {
+        enabled: false,
+      },
+      tooltip: {
+        enabled: false,
+      },
+      legend: {
+        enabled: false,
+      },
+      responsive: {
+        rules: [{
+          condition: {
+            maxWidth: 450,
+          },
+          chartOptions: {
+            chart: {
+              height: 400,
+              marginLeft: 20,
+            },
+            plotOptions: {
+              series: {
+                pointWidth: 3,
+                borderRadius: 2,
+              },
+            },
+            xAxis: {
+              labels: {
+                rotation: -90,
+                padding: 0,
+                style: {
+                  fontSize: '9px',
+                },
               },
             },
           },
-        },
-      }],
-    },
-  };
+        }],
+      },
+    };
 
-  const config = merge({}, baseChartConfig, columnChartConfig);
+    const config = merge({}, baseChartConfig, columnChartConfig);
+    const className = classnames(
+      style.wrapper,
+      this.props.className,
+      { [style.stacked]: isMultiple });
 
-  return (
-    <div className={classnames(style.wrapper, props.className, { [style.stacked]: isMultiple })}>
-      <div className={style.titleWrapper}>
-        <h4 className={style.title}>
-          {title}
-        </h4>
+    return (
+      <div className={className}>
+        <div className={style.titleWrapper}>
+          <h4 className={style.title}>
+            {title}
+          </h4>
 
-        <AboutTooltip
-          description={longDescription}
-          position="bottom"
-          size={18}
-        />
-      </div>
-
-      {isMultiple && (
-        <Legend
-          // Legend is our own HTML so we can style and position it with CSS
-          className={style.legendWrapper}
-          series={series}
-        />
-      )}
-
-      {isMultiple || (
-        <div className={style.descriptionLabel}>
-          {shortDescription}
+          <AboutTooltip
+            description={longDescription}
+            position="bottom"
+            size={18}
+          />
         </div>
-      )}
 
-      <AbstractWidget config={config} />
-    </div>
-  );
-};
+        {isMultiple && (
+          <Legend
+            // Legend is our own HTML so we can style and position it with CSS
+            className={style.legendWrapper}
+            series={series}
+          />
+        )}
+
+        {isMultiple || (
+          <div className={style.descriptionLabel}>
+            {shortDescription}
+          </div>
+        )}
+
+        <AbstractWidget ref={(c) => { this.chartWidget = c; }} config={config} />
+      </div>
+    );
+  }
+}
 
 const cityType = PropTypes.shape({
   name: PropTypes.string.isRequired,
