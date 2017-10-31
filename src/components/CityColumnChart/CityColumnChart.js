@@ -25,7 +25,7 @@ function getSeriesDataForIndicator(cities, indicator, mainCity = null) {
           return val;
         }
 
-        return { y: val, color: 'gray' };
+        return { y: val, color: getColorVariant('GREY', '200') };
       }
 
       return val;
@@ -76,6 +76,7 @@ class CityColumnChart extends Component {
     const shortDescription = this.props.shortDescription || firstIndicator.shortDescription;
     const longDescription = this.props.longDescription || firstIndicator.longDescription;
     const mainCity = this.props.city;
+    const selectedCategory = mainCity ? mainCity.name : null;
 
     const data = sortChartData(this.props.cities, this.props.indicatorIds[0]);
 
@@ -125,10 +126,18 @@ class CityColumnChart extends Component {
       xAxis: {
         type: 'category',
         categories: data.map(city => city.name),
+        selectedCategory,
         labels: {
           rotation: -45,
           style: {
             fontSize: '10px',
+          },
+          formatter() {
+            if (this.value === this.axis.userOptions.selectedCategory) {
+              return `<span style="font-weight: 800; font-size: 1.3em">${this.value}</span>`;
+            }
+
+            return this.value;
           },
         },
         plotBands,
