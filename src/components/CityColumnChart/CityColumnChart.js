@@ -20,11 +20,7 @@ function getSeriesDataForIndicator(cities, indicator, mainCity = null) {
     if (indicator in city.indices) {
       const val = city.indices[indicator];
 
-      if (mainCity) {
-        if (mainCity.name === city.name) {
-          return val;
-        }
-
+      if (mainCity && !city.selected && mainCity.id !== city.id) {
         return { y: val, color: getColorVariant('GREY', '200') };
       }
 
