@@ -15,7 +15,6 @@ class CityCategory extends Component {
   }
 
   onCityToggle(cityId) {
-    console.warn('fuckoo');
     const cities = this.state.cities.slice();
     const idx = cities.findIndex(c => c.id === cityId);
     const city = Object.assign({}, cities[idx]);
