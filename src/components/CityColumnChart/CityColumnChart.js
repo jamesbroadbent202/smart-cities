@@ -6,6 +6,7 @@ import merge from 'lodash/merge';
 import numeral from 'numeral';
 import AboutTooltip from '../AboutTooltip/AboutTooltip';
 import Legend from '../Legend/Legend';
+import Icon from '../Icon/Icon';
 import baseChartConfig from '../../helpers/baseChartConfig';
 import getColorRange from '../../helpers/getColorRange';
 import getColorVariant from '../../helpers/getColorVariant';
@@ -213,6 +214,18 @@ class CityColumnChart extends Component {
           />
         </div>
 
+        <div className={style.metaWrapper}>
+          <Icon
+            className={style.indicatorTypeMark}
+            color={baseColor}
+            icon={firstIndicator.contextual ? 'contextualIndicator' : 'performanceIndicator'}
+            size={14}
+          />
+          <span>
+            {firstIndicator.contextual ? 'Contextual' : 'Performance'} indicator
+          </span>
+        </div>
+
         {isMultiple && (
           <Legend
             // Legend is our own HTML so we can style and position it with CSS
@@ -227,7 +240,9 @@ class CityColumnChart extends Component {
           </div>
         )}
 
-        <AbstractWidget ref={(c) => { this.chartWidget = c; }} config={config} />
+        <div className={style.chartWrapper}>
+          <AbstractWidget ref={(c) => { this.chartWidget = c; }} config={config} />
+        </div>
       </div>
     );
   }
