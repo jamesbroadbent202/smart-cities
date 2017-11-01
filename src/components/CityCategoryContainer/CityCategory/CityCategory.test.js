@@ -17,11 +17,13 @@ const defaultProps = {
       {
         name: 'Buying houses',
         colorVariation: '100',
+        highlightColorDark: 'HOUSING_600',
         summaryIndicatorIds: [],
       },
       {
         name: 'Living in houses',
         colorVariation: '050',
+        highlightColorDark: 'HOUSING_700',
         summaryIndicatorIds: [],
       },
     ],
@@ -35,16 +37,19 @@ const defaultProps = {
       id: 'perth',
       description: 'description of Perth',
       name: 'Perth',
+      indices: {}
     },
     {
       id: 'sydney',
       description: 'description of Sydney',
       name: 'Sydney',
+      indices: {}
     },
     {
       id: 'melbourne',
       description: 'description of Melbourne',
       name: 'Melbourne',
+      indices: {}
     },
   ],
   toggleCitySelected: () => {},
