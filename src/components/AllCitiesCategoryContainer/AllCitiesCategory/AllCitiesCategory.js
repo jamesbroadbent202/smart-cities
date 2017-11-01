@@ -57,6 +57,7 @@ const AllCitiesCategory = (props) => {
           colorName={props.category.colorName}
           cities={props.cities}
           heroIndicatorId={props.category.heroIndicatorId}
+          highlightColorDark={subCategory.highlightColorDark}
         />
       ))}
     </PageWrapper>

@@ -4,6 +4,7 @@ import getSubCategorySectionId from '../../helpers/getSubCategorySectionId';
 import CityColumnChart from '../CityColumnChart/CityColumnChart';
 import Icon from '../Icon/Icon';
 import { INDICATORS } from '../../constants';
+import getColorVariant from '../../helpers/getColorVariant';
 import style from './SubCategoryDetails.scss';
 
 const SubCategoryDetails = (props) => {
@@ -17,6 +18,8 @@ const SubCategoryDetails = (props) => {
     !chart.indicatorIds.includes(props.heroIndicatorId)),
   );
 
+  const cardHighlightColor = getColorVariant(props.highlightColorDark);
+
   return (
     <div
       className={style.wrapper}
@@ -28,6 +31,7 @@ const SubCategoryDetails = (props) => {
             className={style.iconWrapper}
             size={70}
             icon={subCategory.iconId}
+            color={cardHighlightColor}
           />
 
           <h3>{subCategory.name}</h3>
@@ -90,6 +94,7 @@ SubCategoryDetails.propTypes = {
   cities: PropTypes.arrayOf(cityType).isRequired,
   city: cityType,
   heroIndicatorId: PropTypes.string.isRequired,
+  highlightColorDark: PropTypes.string.isRequired,
 };
 
 export default SubCategoryDetails;

@@ -69,6 +69,7 @@ class CityCategory extends Component {
             cities={this.state.cities}
             city={this.props.city}
             heroIndicatorId={this.props.category.heroIndicatorId}
+            highlightColorDark={subCategory.highlightColorDark}
           />
         ))}
       </PageWrapper>
