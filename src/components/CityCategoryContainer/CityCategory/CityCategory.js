@@ -49,7 +49,6 @@ class CityCategory extends Component {
             key={subCategory.name}
             {...subCategory}
             categoryId={this.props.category.id}
-            colorName={this.props.category.colorName}
             city={this.props.city}
           />
         ))}
