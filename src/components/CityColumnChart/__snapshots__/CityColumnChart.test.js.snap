@@ -8,9 +8,18 @@ exports[`should match Snapshot 1`] = `
     </h4>
     <AboutTooltip description=\\"Total population\\" position=\\"bottom\\" size={18} />
   </div>
+  <div className=\\"metaWrapper\\">
+    <Icon className=\\"indicatorTypeMark\\" color=\\"JOBS_600\\" icon=\\"contextualIndicator\\" size={14} />
+    <span>
+      Contextual
+       indicator
+    </span>
+  </div>
   <div className=\\"descriptionLabel\\">
     Total population
   </div>
-  <AbstractWidget config={{...}} />
+  <div className=\\"chartWrapper\\">
+    <AbstractWidget config={{...}} />
+  </div>
 </div>"
 `;
