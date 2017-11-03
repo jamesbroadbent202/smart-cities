@@ -53,28 +53,17 @@
   margin-left: 8px;
   margin-right: 8px;
   margin-bottom: 6px;
-  font-size: 11px;
-  font-weight: 300;
-  // TODO (davidg): set this up top and it will inherit, no?
-
-  @include for-tablet-portrait-up {
-    font-size: 12px;
-  }
+  font-size: 12px;
+  font-weight: 500;
 }
 
 :global(.cityColumnChartTooltipRow) {
   margin-left: 8px;
   margin-right: 8px;
-  font-size: 11px;
-  font-weight: 300;
-  // TODO (davidg): set this up top and it will inherit, no?
+  font-size: 12px;
 
   &:not(:last-of-type) {
     margin-bottom: 4px;
-  }
-
-  @include for-tablet-portrait-up {
-    font-size: 12px;
   }
 }
 
@@ -86,5 +75,5 @@
 }
 
 :global(.cityColumnChartTooltipValue) {
-  font-weight: 700;
+  font-weight: 500;
 }

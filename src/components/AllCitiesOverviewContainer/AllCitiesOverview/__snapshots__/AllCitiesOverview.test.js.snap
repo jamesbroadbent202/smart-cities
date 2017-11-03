@@ -5,9 +5,7 @@ exports[`should match Snapshot 1`] = `
   <div className=\\"heroWrapper\\">
     <p className=\\"heroText\\">
       Creating the foundations for success across all 
-      <span className=\\"heroTextCityCount\\">
-        2
-      </span>
+      2
        cities
     </p>
   </div>

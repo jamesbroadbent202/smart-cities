@@ -14,7 +14,7 @@ const AllCitiesOverview = props => (
     <div className={style.heroWrapper}>
       <p className={style.heroText}>
         Creating the foundations for success across
-        all <span className={style.heroTextCityCount}>{props.cities.length}</span> cities
+        all {props.cities.length} cities
       </p>
     </div>
 

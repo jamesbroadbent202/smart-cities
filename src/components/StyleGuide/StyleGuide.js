@@ -119,14 +119,12 @@ const StyleGuide = () => (
 
     <h1 className={style.sectionText}>Typography</h1>
 
-    <div>
-      {TYPES.map(type => (
-        <TypographyRow
-          key={type.fontSize + type.fontWeight}
-          style={type}
-        />
-      ))}
-    </div>
+    {TYPES.map(type => (
+      <TypographyRow
+        key={type.fontSize + type.fontWeight}
+        style={type}
+      />
+    ))}
   </div>
 );
 
