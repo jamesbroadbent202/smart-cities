@@ -58,13 +58,14 @@
 }
 
 .categoryTitle {
-  font-size: 34px;
+  font-size: 36px;
+  font-weight: 300;
   line-height: 1;
   margin-bottom: 16px;
 
   .category__context & {
     font-size: 20px;
-    font-weight: 700;
+    font-weight: 500;
   }
 
   @include for-tablet-landscape-up {
@@ -72,6 +73,7 @@
 
     .category__context & {
       font-size: 22px;
+      font-weight: 300;
     }
   }
 }
@@ -83,6 +85,7 @@
 
   @include for-tablet-landscape-up {
     font-size: 22px;
+    font-weight: 300;
   }
 }
 
@@ -169,7 +172,7 @@
   display: flex;
   align-items: center;
   width: 100%;
-  padding: 4px 3px 4px 0;
+  padding: 1px 3px 1px 0;
   border-radius: 10px;
 
   @include for-tablet-portrait-up {

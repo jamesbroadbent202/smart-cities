@@ -11,11 +11,12 @@
 
 .sectionText {
   margin-bottom: 16px;
-  font-size: 33px;
+  font-size: 30px;
+  font-weight: 300;
   line-height: 1.2;
 
   @include for-tablet-portrait-up {
-    font-size: 38px;
+    font-size: 36px;
   }
 
   @include for-tablet-landscape-up {
@@ -25,6 +26,7 @@
 
 .subSectionText {
   font-size: 36px;
+  font-weight: 300;
 }
 
 .iconsWrapper {
