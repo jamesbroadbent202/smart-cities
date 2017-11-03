@@ -32,7 +32,7 @@ it('should apply the correct size class', () => {
     />
   );
 
-  expect(component.hasClass('wrapper__large')).toBe(true);
+  expect(component.hasClass('largeCard')).toBe(true);
 });
 
 it('should handle an indicator being passed as a string', () => {
@@ -43,7 +43,7 @@ it('should handle an indicator being passed as a string', () => {
     />
   );
 
-  expect(component.find('.header').text()).toBe('The population');
+  expect(component.find('.header').text()).toBe('Population');
 });
 
 it('should render no prefix or suffix when none are available', () => {
@@ -132,34 +132,22 @@ it('should render the card suffix', () => {
   expect(component.find('.suffix').text()).toBe('%/year');
 });
 
-it('should render an Icon if the indicator is not contextual', () => {
+it('should render an Icon if the card is not on the context page', () => {
   const component =  shallow(
     <IndicatorCard
       {...defaultProps}
-      indicator={{
-        name: 'Population growth',
-        cardPrefix: '',
-        cardSuffix: '/year',
-        format: '0[.]0%',
-        contextual: false,
-      }}
+      isContextPage={false}
     />
   );
 
   expect(component.find('Icon').length).toBe(1);
 });
 
-it('should not render an Icon if the indicator is contextual', () => {
+it('should not render an Icon if the card is on the context page', () => {
   const component =  shallow(
     <IndicatorCard
       {...defaultProps}
-      indicator={{
-        name: 'Population growth',
-        cardPrefix: '',
-        cardSuffix: '/year',
-        format: '0[.]0%',
-        contextual: true,
-      }}
+      isContextPage
     />
   );
 

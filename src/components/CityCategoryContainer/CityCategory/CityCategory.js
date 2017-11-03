@@ -19,7 +19,7 @@ const CityCategory = props => (
       indicator={props.category.heroIndicatorId}
       title={props.category.name}
       cities={props.cities}
-      isCategoryPage
+      city={props.city}
       isContextPage={props.category.id === CATEGORY_IDS.CONTEXT}
     />
 

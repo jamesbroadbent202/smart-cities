@@ -3,7 +3,7 @@ import { shallow } from 'enzyme';
 import PageBanner from './PageBanner';
 
 jest.mock('../Card/IndicatorCard/IndicatorCard', () => 'IndicatorCard');
-jest.mock('../Icon/Icon', () => 'Icon');
+jest.mock('../PageLegend/PageLegend', () => 'PageLegend');
 
 const defaultProps = {
   colorName: 'jobs',
@@ -48,34 +48,12 @@ it('should set the background color', () => {
   expect(componentStyle.backgroundColor).toBe('JOBS_020');
 });
 
-it('should show the "performance indicators" text when not on the context page', () => {
-  const component = shallow(
-    <PageBanner
-      {...defaultProps}
-      isContextPage={false}
-    />
-  );
-
-  expect(component.find('.indicatorTypeMarkWrapper').length).toBe(1);
-});
-
-it('should not show the "performance indicators" text when on the context page', () => {
-  const component = shallow(
-    <PageBanner
-      {...defaultProps}
-      isContextPage
-    />
-  );
-
-  expect(component.find('.indicatorTypeMarkWrapper').length).toBe(0);
-});
-
-it('should aggregate data for all cities', () => {
+it('should get the min and max values', () => {
   const component = shallow(
     <PageBanner {...defaultProps} />
   );
 
-  expect(component.find('IndicatorCard').prop('value')).toBe(100); // 77 + 23
+  expect(component.find('IndicatorCard').prop('value')).toEqual([23, 77]);
 });
 
 it('should show data for a single city', () => {
