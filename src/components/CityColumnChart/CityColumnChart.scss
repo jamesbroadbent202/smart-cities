@@ -45,8 +45,7 @@
 
   @include for-phone-only {
     display: block;
-
-    @include type-detail-text;
+    font-size: 12px;
   }
 }
 
@@ -54,7 +53,9 @@
   margin-left: 8px;
   margin-right: 8px;
   margin-bottom: 6px;
-  font-size: 10px;
+  font-size: 11px;
+  font-weight: 300;
+  // TODO (davidg): set this up top and it will inherit, no?
 
   @include for-tablet-portrait-up {
     font-size: 12px;
@@ -64,7 +65,9 @@
 :global(.cityColumnChartTooltipRow) {
   margin-left: 8px;
   margin-right: 8px;
-  font-size: 10px;
+  font-size: 11px;
+  font-weight: 300;
+  // TODO (davidg): set this up top and it will inherit, no?
 
   &:not(:last-of-type) {
     margin-bottom: 4px;

@@ -1,11 +1,11 @@
 @import '~style/variables';
 
 .link {
-  @include type-nav-vertical;
-
   display: block;
   transition: $animation-duration;
   color: $color-white;
+  font-size: 16px;
+  letter-spacing: -0.3px;
 
   .citySelected & {
     color: $color-primary--060;
@@ -23,17 +23,22 @@
 }
 
 .allCitiesLink {
-  @include type-nav-vertical-large;
-
   display: flex;
   align-items: center;
   height: $top-nav-height-mobile;
   margin-bottom: 6px;
   padding: 0 16px;
   background: $color-primary--800;
+  font-size: 21px;
+  font-weight: 700;
+  letter-spacing: -0.2px;
 
   .citySelected & {
     color: $color-primary--080;
+  }
+
+  @include for-tablet-landscape-up {
+    font-size: 23px;
   }
 
   @include for-desktop-up {
@@ -51,14 +56,19 @@
 }
 
 .cityCount {
-  @include type-nav-vertical-large;
-
   margin-left: auto; // push right
   padding: 0 16px;
   background: $color-primary--700;
+  font-size: 21px;
+  font-weight: 700;
+  letter-spacing: -0.2px;
 
   .citySelected & {
     color: $color-primary--080;
+  }
+
+  @include for-tablet-landscape-up {
+    font-size: 23px;
   }
 }
 

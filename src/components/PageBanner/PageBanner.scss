@@ -31,13 +31,26 @@
 }
 
 .title {
-  @include type-h1;
-
   margin-bottom: 16px;
+  font-size: 33px;
+  line-height: 1.2;
+
+  @include for-tablet-portrait-up {
+    font-size: 38px;
+  }
+
+  @include for-tablet-landscape-up {
+    font-size: 44px;
+  }
 }
 
 .description {
-  @include type-intro-text;
+  font-size: 20px;
+  line-height: 1.4;
+
+  @include for-tablet-landscape-up {
+    font-size: 22px;
+  }
 }
 
 .card {
