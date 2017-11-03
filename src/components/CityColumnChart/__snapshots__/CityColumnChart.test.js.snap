@@ -9,7 +9,7 @@ exports[`should match Snapshot 1`] = `
     <AboutTooltip description=\\"Total population\\" position=\\"bottom\\" size={18} />
   </div>
   <div className=\\"metaWrapper\\">
-    <Icon className=\\"indicatorTypeMark\\" color=\\"JOBS_600\\" icon=\\"contextualIndicator\\" size={14} />
+    <Icon className=\\"indicatorTypeMark\\" color=\\"JOBS_900\\" icon=\\"contextualIndicator\\" size={14} />
     <span>
       Contextual
        indicator
