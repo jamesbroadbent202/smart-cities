@@ -28,8 +28,9 @@ $minister-image-width: 214px;
   line-height: 1.2;
   font-size: 30px;
   font-weight: 300;
-  letter-spacing: 1px;
+  letter-spacing: 0.4px;
   color: $color-white;
+  overflow: visible; // override container, prevent clipping in Edge
 
   @include for-tablet-portrait-up {
     padding-right: 20%;
@@ -45,9 +46,6 @@ $minister-image-width: 214px;
 
   @include for-desktop-up {
     margin-bottom: 60px;
-    font-size: 72px;
-    font-weight: 500;
-    letter-spacing: -2.6px;
   }
 }
 
@@ -155,15 +153,15 @@ $minister-image-width: 214px;
   font-size: 44px;
   font-weight: 300;
   line-height: 1.2;
-  letter-spacing: -1.8px;
+  letter-spacing: 0.5px;
 }
 
 .subInfoBodyText,
 .infoBodyText {
-  font-size: 22px;
+  font-size: 20px;
   font-weight: 300;
   line-height: 37px;
-  letter-spacing: -0.7px;
+  letter-spacing: 1px;
 }
 
 .infoBodyText:not(:first-of-type) {
