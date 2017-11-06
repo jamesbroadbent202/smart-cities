@@ -10,10 +10,8 @@ exports[`should match Snapshot 1`] = `
   </div>
   <div className=\\"metaWrapper\\">
     <Icon className=\\"indicatorTypeMark\\" color=\\"JOBS_900\\" icon=\\"contextualIndicator\\" size={14} />
-    <span>
-      Contextual
-       indicator
-    </span>
+    Contextual
+     indicator
   </div>
   <div className=\\"descriptionLabel\\">
     Total population

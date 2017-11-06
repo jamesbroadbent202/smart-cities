@@ -31,6 +31,7 @@ const defaultProps = {
   city: {
     name: 'Perth',
     id: 'perth',
+    indices: {},
   },
   cities: [
     {
