@@ -6,7 +6,7 @@ exports[`should match Snapshot 1`] = `
   <SubCategorySummary name=\\"Buying houses\\" colorVariation=\\"100\\" highlightColorDark=\\"HOUSING_600\\" summaryIndicatorIds={{...}} categoryId=\\"mock\\" city={{...}} />
   <SubCategorySummary name=\\"Living in houses\\" colorVariation=\\"050\\" highlightColorDark=\\"HOUSING_700\\" summaryIndicatorIds={{...}} categoryId=\\"mock\\" city={{...}} />
   <CompareCities category={{...}} city={{...}} cities={{...}} toggleCitySelected={[Function]} />
-  <SubCategoryDetails subCategory={{...}} colorName=\\"jobs\\" cities={{...}} city={{...}} heroIndicatorId=\\"population\\" highlightColorDark=\\"HOUSING_600\\" />
-  <SubCategoryDetails subCategory={{...}} colorName=\\"jobs\\" cities={{...}} city={{...}} heroIndicatorId=\\"population\\" highlightColorDark=\\"HOUSING_700\\" />
+  <SubCategoryCharts subCategory={{...}} colorName=\\"jobs\\" cities={{...}} city={{...}} heroIndicatorId=\\"population\\" highlightColorDark=\\"HOUSING_600\\" />
+  <SubCategoryCharts subCategory={{...}} colorName=\\"jobs\\" cities={{...}} city={{...}} heroIndicatorId=\\"population\\" highlightColorDark=\\"HOUSING_700\\" />
 </PageWrapper>"
 `;

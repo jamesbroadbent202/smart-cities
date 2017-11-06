@@ -8,7 +8,7 @@ exports[`should match Snapshot 1`] = `
   <div className=\\"heroWrapper\\">
     <CityColumnChart cities={{...}} colorBase=\\"jobs\\" highlightColorLight=\\"MOCK_040\\" highlightColorDark=\\"MOCK_500\\" indicatorIds={{...}} />
   </div>
-  <SubCategoryDetails subCategory={{...}} colorName=\\"jobs\\" cities={{...}} heroIndicatorId=\\"population\\" highlightColorDark=\\"JOBS_600\\" />
-  <SubCategoryDetails subCategory={{...}} colorName=\\"jobs\\" cities={{...}} heroIndicatorId=\\"population\\" highlightColorDark=\\"JOBS_700\\" />
+  <SubCategoryCharts subCategory={{...}} colorName=\\"jobs\\" cities={{...}} heroIndicatorId=\\"population\\" highlightColorDark=\\"JOBS_600\\" />
+  <SubCategoryCharts subCategory={{...}} colorName=\\"jobs\\" cities={{...}} heroIndicatorId=\\"population\\" highlightColorDark=\\"JOBS_700\\" />
 </PageWrapper>"
 `;

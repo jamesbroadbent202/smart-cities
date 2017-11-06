@@ -4,7 +4,7 @@ import PageWrapper from '../../PageWrapper/PageWrapper';
 import PageBanner from '../../PageBanner/PageBanner';
 import SubCategorySummary from '../../SubCategorySummary/SubCategorySummary';
 import { CATEGORY_IDS, INDICATORS } from '../../../constants';
-import SubCategoryDetails from '../../SubCategoryDetails/SubCategoryDetails';
+import SubCategoryCharts from '../../SubCategoryCharts/SubCategoryCharts';
 import CompareCities from '../../CompareCities/CompareCities';
 
 const CityCategory = props => (
@@ -42,7 +42,7 @@ const CityCategory = props => (
     />
 
     {props.category.subCategories.map(subCategory => (
-      <SubCategoryDetails
+      <SubCategoryCharts
         key={subCategory.name}
         subCategory={subCategory}
         colorName={props.category.colorName}
