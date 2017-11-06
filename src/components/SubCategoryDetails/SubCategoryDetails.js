@@ -34,7 +34,7 @@ const SubCategoryDetails = (props) => {
             color={cardHighlightColor}
           />
 
-          <h3>{subCategory.name}</h3>
+          <h3 className={style.headingText}>{subCategory.name}</h3>
         </div>
         <div className={style.chartGrid}>
           {heroChart &&

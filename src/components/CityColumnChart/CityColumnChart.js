@@ -16,11 +16,14 @@ import {
 } from '../../constants';
 import style from './CityColumnChart.scss';
 
-function getSeriesDataForIndicator(cities, indicator, mainCity = null) {
+function getSeriesDataForIndicator(cities, indicator, mainCity) {
   return cities.map((city) => {
     if (indicator in city.indices) {
       const val = city.indices[indicator];
 
+      // If we are on a city page, and this is neither the main city
+      // nor one of the cities selected by the user for comparison,
+      // then make the column grey.
       if (mainCity && !city.selected && mainCity.id !== city.id) {
         return { y: val, color: getColorVariant('GREY', '200') };
       }
@@ -74,7 +77,6 @@ const CityColumnChart = (props) => {
   const shortDescription = props.shortDescription || firstIndicator.shortDescription;
   const longDescription = props.longDescription || firstIndicator.longDescription;
   const mainCity = props.city;
-  const selectedCategory = mainCity ? mainCity.name : null;
 
   const data = sortChartData(props.cities, props.indicatorIds[0]);
 
@@ -124,15 +126,15 @@ const CityColumnChart = (props) => {
     xAxis: {
       type: 'category',
       categories: data.map(city => city.name),
-      selectedCategory,
       labels: {
         rotation: -45,
         style: {
           fontSize: '10px',
         },
         formatter() {
-          if (this.value === this.axis.userOptions.selectedCategory) {
-            return `<span style="font-weight: 800; font-size: 1.3em">${this.value}</span>`;
+          // on the city page, show the current city name in bold
+          if (mainCity && this.value === mainCity.name) {
+            return `<span style="font-weight: 700; font-size: 12px">${this.value}</span>`;
           }
 
           return this.value;
@@ -200,7 +202,7 @@ const CityColumnChart = (props) => {
         chartOptions: {
           chart: {
             height: 400,
-            marginLeft: 20,
+            marginLeft: 25,
           },
           plotOptions: {
             series: {
@@ -269,7 +271,7 @@ const CityColumnChart = (props) => {
       )}
 
       <div className={style.chartWrapper}>
-        <AbstractWidget ref={(c) => { this.chartWidget = c; }} config={config} />
+        <AbstractWidget config={config} />
       </div>
     </div>
   );
