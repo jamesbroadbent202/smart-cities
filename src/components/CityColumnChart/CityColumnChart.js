@@ -252,9 +252,7 @@ const CityColumnChart = (props) => {
           icon={firstIndicator.contextual ? 'contextualIndicator' : 'performanceIndicator'}
           size={14}
         />
-        <span>
-          {firstIndicator.contextual ? 'Contextual' : 'Performance'} indicator
-        </span>
+        {firstIndicator.contextual ? 'Contextual' : 'Performance'} indicator
       </div>
 
       {isMultiple && (
