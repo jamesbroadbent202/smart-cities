@@ -111,6 +111,7 @@ const CityColumnChart = (props) => {
     },
     plotOptions: {
       series: {
+        animation: false,
         stacking: props.stacked ? 'normal' : null,
         pointWidth: 8,
         borderRadius: 4,
@@ -238,9 +239,9 @@ const CityColumnChart = (props) => {
         </h4>
 
         <AboutTooltip
-          description={longDescription}
-          position="bottom"
-          size={18}
+          text={longDescription}
+          color={colorMedium}
+          className={style.aboutChartIcon}
         />
       </div>
 
