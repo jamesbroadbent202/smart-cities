@@ -5,9 +5,9 @@ import CityColumnChart from '../CityColumnChart/CityColumnChart';
 import Icon from '../Icon/Icon';
 import { INDICATORS } from '../../constants';
 import getColorVariant from '../../helpers/getColorVariant';
-import style from './SubCategoryDetails.scss';
+import style from './SubCategoryCharts.scss';
 
-const SubCategoryDetails = (props) => {
+const SubCategoryCharts = (props) => {
   const subCategory = props.subCategory;
 
   const heroChart = subCategory.charts.find(chart => (
@@ -82,7 +82,7 @@ const cityType = PropTypes.shape({
   indices: PropTypes.object.isRequired,
 });
 
-SubCategoryDetails.propTypes = {
+SubCategoryCharts.propTypes = {
   subCategory: PropTypes.shape({
     name: PropTypes.string.isRequired,
     charts: PropTypes.arrayOf(PropTypes.shape({
@@ -99,4 +99,4 @@ SubCategoryDetails.propTypes = {
   highlightColorDark: PropTypes.string.isRequired,
 };
 
-export default SubCategoryDetails;
+export default SubCategoryCharts;
